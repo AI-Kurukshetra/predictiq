@@ -30,7 +30,7 @@ export function AiDashboardSummary() {
 
   if (loading) {
     return (
-      <div className="rounded-xl border-l-4 border-l-[#0D8070] border border-[#E8ECF1] bg-white p-4">
+      <div className="rounded-xl border-l-4 border-l-[#3B82F6] border border-[#E8ECF1] bg-white p-4">
         <div className="h-4 w-3/4 animate-pulse rounded bg-[#E8ECF1]" />
         <div className="mt-2 h-3 w-1/2 animate-pulse rounded bg-[#E8ECF1]" />
       </div>
@@ -40,9 +40,9 @@ export function AiDashboardSummary() {
   if (!summary) return null;
 
   return (
-    <div className="rounded-xl border-l-4 border-l-[#0D8070] border border-[#E8ECF1] bg-white p-4">
+    <div className="rounded-xl border-l-4 border-l-[#3B82F6] border border-[#E8ECF1] bg-white p-4">
       <div className="flex items-start gap-2">
-        <Sparkles className="mt-0.5 h-4 w-4 shrink-0 text-[#0D8070]" />
+        <Sparkles className="mt-0.5 h-4 w-4 shrink-0 text-[#3B82F6]" />
         <p className="text-sm text-[#1A2332]">{summary}</p>
       </div>
     </div>

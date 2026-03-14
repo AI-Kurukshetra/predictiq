@@ -17,18 +17,15 @@ PredictIQ is an AI-powered predictive maintenance platform for manufacturers. It
 - Build: npm run build
 - Lint: npm run lint
 
-## Color Palette (Augury-inspired)
-- Navy (structure): #0B2340 — sidebar, dark sections, headings
-- Teal (data/trust): #0D8070 — charts, healthy status, links, data UI
-- Orange (action): #E07A5F — CTA buttons, AI features, attention
-- Sidebar: bg #0B2340, hover #132D4F, active #1A3760, active border #E07A5F
+## Color Palette (Final)
+- Primary: #3B82F6 (blue) — buttons, links, active states, AI, charts primary
+- Sidebar: bg #0B2340, hover #132D4F, active #1A3760, active border #3B82F6
 - Content bg: #F5F6FA, Card border: #E8ECF1
 - Text: heading #1A2332, body #5A6578, muted #8C95A6
-- Healthy: bg #E6F5F0, text #0A5E52
-- Warning: bg #FFF0EB, text #8B3A1F
-- Critical: bg #F0E4E8, text #6B1D3A, accent #8B2252
-- Info: bg #DBEAFE, text #1E40AF
-- Buttons: CTA #E07A5F, data/view #0D8070, danger #8B2252
+- Healthy: #2ADE6B — badge bg #DCFCE7 text #166534, health ring 80+
+- Warning: #F59E0B — badge bg #FEF3C7 text #92400E, health ring 50-79
+- Critical: #F53642 — badge bg #FEE2E2 text #991B1B, health ring <50, danger
+- Info: #3B82F6 — badge bg #DBEAFE text #1E40AF
 
 ## Code Rules
 - Server Components by default. Add "use client" only when needed.

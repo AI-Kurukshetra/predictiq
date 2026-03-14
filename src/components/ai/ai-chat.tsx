@@ -92,7 +92,7 @@ export function AiChat({
         {/* Header */}
         <div className="flex items-center justify-between border-b border-[#E8ECF1] px-4 py-3">
           <div className="flex items-center gap-2">
-            <Sparkles className="h-5 w-5 text-[#E07A5F]" />
+            <Sparkles className="h-5 w-5 text-[#3B82F6]" />
             <div>
               <h3 className="text-sm font-semibold text-[#1A2332]">PredictIQ AI</h3>
               <p className="text-[10px] text-[#8C95A6]">Powered by AI</p>
@@ -160,13 +160,13 @@ export function AiChat({
               onKeyDown={(e) => e.key === "Enter" && sendMessage(input)}
               placeholder="Ask about equipment health..."
               disabled={isLoading}
-              className="flex-1 rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] outline-none focus:ring-2 focus:ring-[#0D8070] disabled:opacity-50"
+              className="flex-1 rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] outline-none focus:ring-2 focus:ring-[#3B82F6] disabled:opacity-50"
             />
             <button
               type="button"
               onClick={() => sendMessage(input)}
               disabled={isLoading || !input.trim()}
-              className="rounded-lg bg-[#0D8070] p-2 text-white transition hover:bg-[#C4654D] disabled:opacity-50"
+              className="rounded-lg bg-[#3B82F6] p-2 text-white transition hover:bg-[#2563EB] disabled:opacity-50"
             >
               <Send className="h-4 w-4" />
             </button>

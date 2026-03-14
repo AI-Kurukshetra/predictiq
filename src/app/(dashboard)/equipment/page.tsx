@@ -50,7 +50,7 @@ export default async function EquipmentPage({
           {role === "admin" && (
             <Link
               href="/equipment/new"
-              className="inline-flex items-center gap-2 rounded-lg bg-[#E07A5F] px-3 py-2 text-sm font-medium text-white hover:bg-[#C4654D]"
+              className="inline-flex items-center gap-2 rounded-lg bg-[#3B82F6] px-3 py-2 text-sm font-medium text-white hover:bg-[#2563EB]"
             >
               <Plus className="h-4 w-4" />
               Add Equipment
@@ -65,19 +65,19 @@ export default async function EquipmentPage({
         </Badge>
         <Badge
           variant="healthy"
-          className="rounded-full bg-[#E6F5F0] px-3 py-1 text-sm text-[#0B2340]"
+          className="rounded-full bg-[#DCFCE7] px-3 py-1 text-sm text-[#0B2340]"
         >
           Healthy: {stats.healthy}
         </Badge>
         <Badge
           variant="warning"
-          className="rounded-full bg-[#FFF0EB] px-3 py-1 text-sm text-[#0A6B5E]"
+          className="rounded-full bg-[#FEF3C7] px-3 py-1 text-sm text-[#166534]"
         >
           Warning: {stats.warning}
         </Badge>
         <Badge
           variant="critical"
-          className="rounded-full bg-[#F0E4E8] px-3 py-1 text-sm text-[#6B1D3A]"
+          className="rounded-full bg-[#FEE2E2] px-3 py-1 text-sm text-[#991B1B]"
         >
           Critical: {stats.critical}
         </Badge>

@@ -17,10 +17,10 @@ interface Recommendation {
 }
 
 const priorityBorder: Record<string, string> = {
-  urgent: "border-l-[#8B2252]",
-  high: "border-l-[#E07A5F]",
+  urgent: "border-l-[#F53642]",
+  high: "border-l-[#F59E0B]",
   medium: "border-l-[#3B82F6]",
-  low: "border-l-[#0D8070]",
+  low: "border-l-[#2ADE6B]",
 };
 
 const priorityVariant = (p: string) => {
@@ -59,14 +59,14 @@ export function AiMaintenancePlan({ facilityId }: { facilityId?: string }) {
     <div className="rounded-xl border border-[#E8ECF1] bg-white p-6">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Sparkles className="h-5 w-5 text-[#E07A5F]" />
+          <Sparkles className="h-5 w-5 text-[#3B82F6]" />
           <h3 className="text-lg font-semibold text-[#1A2332]">AI Maintenance Recommendations</h3>
         </div>
         <button
           type="button"
           onClick={generate}
           disabled={loading}
-          className="rounded-lg bg-[#0D8070] px-4 py-2 text-sm font-medium text-white transition hover:bg-[#C4654D] disabled:opacity-50"
+          className="rounded-lg bg-[#3B82F6] px-4 py-2 text-sm font-medium text-white transition hover:bg-[#2563EB] disabled:opacity-50"
         >
           {loading ? "Generating..." : generated ? "Regenerate" : "Generate Plan"}
         </button>
@@ -102,7 +102,7 @@ export function AiMaintenancePlan({ facilityId }: { facilityId?: string }) {
               <p className="mt-1 text-xs italic text-[#5A6578]">{rec.reason}</p>
               <Link
                 href="/work-orders/new"
-                className="mt-2 inline-block text-xs font-medium text-[#0D8070] hover:underline"
+                className="mt-2 inline-block text-xs font-medium text-[#3B82F6] hover:underline"
               >
                 Create Work Order →
               </Link>

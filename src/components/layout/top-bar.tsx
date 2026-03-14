@@ -8,9 +8,9 @@ import { SearchBar } from "@/components/layout/search-bar";
 type Role = "manager" | "technician" | "admin";
 
 const roleBadgeConfig: Record<Role, { label: string; bg: string; text: string }> = {
-  manager: { label: "Plant Manager", bg: "bg-[#E6F5F0]", text: "text-[#0B2340]" },
+  manager: { label: "Plant Manager", bg: "bg-[#DCFCE7]", text: "text-[#0B2340]" },
   technician: { label: "Technician", bg: "bg-[#DBEAFE]", text: "text-[#1E40AF]" },
-  admin: { label: "Administrator", bg: "bg-[#FFF0EB]", text: "text-[#8B3A1F]" },
+  admin: { label: "Administrator", bg: "bg-[#FEF3C7]", text: "text-[#92400E]" },
 };
 
 function getInitials(name: string) {

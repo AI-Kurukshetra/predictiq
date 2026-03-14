@@ -47,9 +47,9 @@ function getEquipmentName(equipment: unknown) {
 }
 
 function getConfidenceColor(confidence: number) {
-  if (confidence > 80) return "#8B2252";
-  if (confidence >= 60) return "#E07A5F";
-  return "#0D8070";
+  if (confidence > 80) return "#F53642";
+  if (confidence >= 60) return "#3B82F6";
+  return "#3B82F6";
 }
 
 const priorityVariant = (priority: string): BadgeVariant => {
@@ -108,9 +108,9 @@ export default async function DashboardPage({
       .eq("status", "new");
 
     const techStats = [
-      { label: "My Work Orders", value: myWOs.length, icon: ClipboardList, iconBg: "#E6F5F0", iconColor: "#0D8070" },
-      { label: "New Alerts", value: newAlertCount ?? 0, icon: Bell, iconBg: "#F0E4E8", iconColor: "#8B2252" },
-      { label: "Equipment Monitored", value: statsData.totalEquipment, icon: Wrench, iconBg: "#E6F5F0", iconColor: "#0D8070" },
+      { label: "My Work Orders", value: myWOs.length, icon: ClipboardList, iconBg: "#DBEAFE", iconColor: "#3B82F6" },
+      { label: "New Alerts", value: newAlertCount ?? 0, icon: Bell, iconBg: "#FEE2E2", iconColor: "#F53642" },
+      { label: "Equipment Monitored", value: statsData.totalEquipment, icon: Wrench, iconBg: "#DBEAFE", iconColor: "#3B82F6" },
     ];
 
     return (
@@ -143,7 +143,7 @@ export default async function DashboardPage({
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-lg">
-                <ClipboardList className="h-5 w-5 text-[#0D8070]" />
+                <ClipboardList className="h-5 w-5 text-[#3B82F6]" />
                 My Assigned Work Orders
               </CardTitle>
             </CardHeader>
@@ -177,7 +177,7 @@ export default async function DashboardPage({
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-lg">
-                <Activity className="h-5 w-5 text-[#0D8070]" />
+                <Activity className="h-5 w-5 text-[#3B82F6]" />
                 Recent Alerts
               </CardTitle>
             </CardHeader>
@@ -201,7 +201,7 @@ export default async function DashboardPage({
                 ))
               )}
               <div className="pt-1">
-                <Link href="/alerts" className="text-sm font-medium text-[#0D8070] hover:underline">View All Alerts</Link>
+                <Link href="/alerts" className="text-sm font-medium text-[#3B82F6] hover:underline">View All Alerts</Link>
               </div>
             </CardContent>
           </Card>
@@ -217,10 +217,10 @@ export default async function DashboardPage({
   ]);
 
   const stats = [
-    { label: "Total Equipment", value: statsData.totalEquipment, icon: Wrench, iconBg: "#E6F5F0", iconColor: "#0D8070" },
-    { label: "Critical Alerts", value: statsData.criticalAlerts, icon: Bell, iconBg: "#F0E4E8", iconColor: "#8B2252" },
-    { label: "Active Predictions", value: statsData.activePredictions, icon: BrainCircuit, iconBg: "#FFF0EB", iconColor: "#E07A5F" },
-    { label: "Open Work Orders", value: statsData.openWorkOrders, icon: ClipboardList, iconBg: "#E6F5F0", iconColor: "#0D8070" },
+    { label: "Total Equipment", value: statsData.totalEquipment, icon: Wrench, iconBg: "#DBEAFE", iconColor: "#3B82F6" },
+    { label: "Critical Alerts", value: statsData.criticalAlerts, icon: Bell, iconBg: "#FEE2E2", iconColor: "#F53642" },
+    { label: "Active Predictions", value: statsData.activePredictions, icon: BrainCircuit, iconBg: "#FEF3C7", iconColor: "#F59E0B" },
+    { label: "Open Work Orders", value: statsData.openWorkOrders, icon: ClipboardList, iconBg: "#DBEAFE", iconColor: "#3B82F6" },
   ];
 
   return (
@@ -256,7 +256,7 @@ export default async function DashboardPage({
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-lg">
-            <Activity className="h-5 w-5 text-[#0D8070]" />
+            <Activity className="h-5 w-5 text-[#3B82F6]" />
             Equipment Health Distribution
           </CardTitle>
         </CardHeader>
@@ -271,16 +271,16 @@ export default async function DashboardPage({
 
       {/* Quick Actions */}
       <section className="grid grid-cols-1 gap-4 md:grid-cols-3">
-        <Link href="/equipment" className="rounded-lg border border-[#E8ECF1] bg-[#F0E4E8] p-4 transition hover:shadow-md">
+        <Link href="/equipment" className="rounded-lg border border-[#E8ECF1] bg-[#FEE2E2] p-4 transition hover:shadow-md">
           <div className="flex items-center gap-3">
-            <AlertTriangle className="h-5 w-5 text-[#6B1D3A]" />
-            <span className="font-medium text-[#6B1D3A]">Critical Equipment</span>
+            <AlertTriangle className="h-5 w-5 text-[#991B1B]" />
+            <span className="font-medium text-[#991B1B]">Critical Equipment</span>
           </div>
         </Link>
-        <Link href="/work-orders/new" className="rounded-lg border border-[#E8ECF1] bg-[#FFF0EB] p-4 transition hover:shadow-md">
+        <Link href="/work-orders/new" className="rounded-lg border border-[#E8ECF1] bg-[#FEF3C7] p-4 transition hover:shadow-md">
           <div className="flex items-center gap-3">
-            <ClipboardList className="h-5 w-5 text-[#8B3A1F]" />
-            <span className="font-medium text-[#8B3A1F]">Create Work Order</span>
+            <ClipboardList className="h-5 w-5 text-[#92400E]" />
+            <span className="font-medium text-[#92400E]">Create Work Order</span>
           </div>
         </Link>
         <Link href="/predictions" className="rounded-lg bg-[#0B2340] p-4 transition hover:shadow-md">
@@ -295,7 +295,7 @@ export default async function DashboardPage({
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-lg">
-              <Activity className="h-5 w-5 text-[#0D8070]" />
+              <Activity className="h-5 w-5 text-[#3B82F6]" />
               Recent Alerts
             </CardTitle>
           </CardHeader>
@@ -319,7 +319,7 @@ export default async function DashboardPage({
               ))
             )}
             <div className="pt-1">
-              <Link href="/alerts" className="text-sm font-medium text-[#0D8070] hover:underline">View All Alerts</Link>
+              <Link href="/alerts" className="text-sm font-medium text-[#3B82F6] hover:underline">View All Alerts</Link>
             </div>
           </CardContent>
         </Card>
@@ -327,7 +327,7 @@ export default async function DashboardPage({
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-lg">
-              <TrendingUp className="h-5 w-5 text-[#0D8070]" />
+              <TrendingUp className="h-5 w-5 text-[#3B82F6]" />
               Upcoming Predictions
             </CardTitle>
           </CardHeader>
@@ -365,7 +365,7 @@ export default async function DashboardPage({
               ))
             )}
             <div className="pt-1">
-              <Link href="/predictions" className="text-sm font-medium text-[#0D8070] hover:underline">View All Predictions</Link>
+              <Link href="/predictions" className="text-sm font-medium text-[#3B82F6] hover:underline">View All Predictions</Link>
             </div>
           </CardContent>
         </Card>
@@ -410,8 +410,8 @@ async function AdminSection() {
         </Card>
         <Card>
           <CardContent className="flex items-center gap-4">
-            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#E6F5F0]">
-              <Activity className="h-5 w-5 text-[#0D8070]" />
+            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#DCFCE7]">
+              <Activity className="h-5 w-5 text-[#3B82F6]" />
             </div>
             <div>
               <p className="text-2xl font-bold text-[#0B2340]">{userStats.total}</p>
@@ -421,8 +421,8 @@ async function AdminSection() {
         </Card>
         <Card>
           <CardContent className="flex items-center gap-4">
-            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#FFF0EB]">
-              <ShieldCheck className="h-5 w-5 text-[#0D8070]" />
+            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#FEF3C7]">
+              <ShieldCheck className="h-5 w-5 text-[#3B82F6]" />
             </div>
             <div>
               <p className="text-2xl font-bold text-[#0B2340]">47</p>
@@ -435,7 +435,7 @@ async function AdminSection() {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-lg">
-            <Users className="h-5 w-5 text-[#0D8070]" />
+            <Users className="h-5 w-5 text-[#3B82F6]" />
             User Distribution
           </CardTitle>
         </CardHeader>

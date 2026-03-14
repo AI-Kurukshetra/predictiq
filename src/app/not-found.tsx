@@ -4,7 +4,7 @@ export default function NotFound() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-white px-4 text-center">
       <div className="mb-6 flex items-center gap-3">
-        <span className="h-2.5 w-2.5 rounded-full bg-[#0D8070]" />
+        <span className="h-2.5 w-2.5 rounded-full bg-[#3B82F6]" />
         <span className="text-xl font-bold text-[#0B2340]">PredictIQ</span>
       </div>
       <p className="text-8xl font-bold text-[#E8ECF1]">404</p>
@@ -14,7 +14,7 @@ export default function NotFound() {
       </p>
       <Link
         href="/dashboard"
-        className="mt-6 rounded-lg bg-[#E07A5F] px-6 py-3 text-sm font-medium text-white transition hover:bg-[#C4654D]"
+        className="mt-6 rounded-lg bg-[#3B82F6] px-6 py-3 text-sm font-medium text-white transition hover:bg-[#2563EB]"
       >
         Back to Dashboard
       </Link>

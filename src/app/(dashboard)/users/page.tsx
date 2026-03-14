@@ -50,13 +50,13 @@ export default async function UsersPage() {
         <span className="rounded-full bg-[#F5F6FA] px-3 py-1 text-sm font-medium text-[#1A2332]">
           Total: {stats.total}
         </span>
-        <span className="rounded-full bg-[#E6F5F0] px-3 py-1 text-sm font-medium text-[#0B2340]">
+        <span className="rounded-full bg-[#DCFCE7] px-3 py-1 text-sm font-medium text-[#0B2340]">
           Managers: {stats.managers}
         </span>
         <span className="rounded-full bg-[#DBEAFE] px-3 py-1 text-sm font-medium text-[#1E40AF]">
           Technicians: {stats.technicians}
         </span>
-        <span className="rounded-full bg-[#FFF0EB] px-3 py-1 text-sm font-medium text-[#8B3A1F]">
+        <span className="rounded-full bg-[#FEF3C7] px-3 py-1 text-sm font-medium text-[#92400E]">
           Admins: {stats.admins}
         </span>
       </section>

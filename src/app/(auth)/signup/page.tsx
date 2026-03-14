@@ -22,33 +22,33 @@ export default async function SignupPage({ searchParams }: SignupPageProps) {
         </div>
 
         {error ? (
-          <div className="mt-4 rounded-lg border border-[#F0E4E8] bg-[#F0E4E8] px-3 py-2 text-sm text-[#6B1D3A]">{error}</div>
+          <div className="mt-4 rounded-lg border border-[#FEE2E2] bg-[#FEE2E2] px-3 py-2 text-sm text-[#991B1B]">{error}</div>
         ) : null}
 
         {message ? (
-          <div className="mt-4 rounded-lg border border-[#E6F5F0] bg-[#E6F5F0] px-3 py-2 text-sm text-[#0A5E52]">{message}</div>
+          <div className="mt-4 rounded-lg border border-[#DCFCE7] bg-[#DCFCE7] px-3 py-2 text-sm text-[#166534]">{message}</div>
         ) : null}
 
         <form action={signupAction} className="mt-6 space-y-5">
           <div>
             <label htmlFor="full_name" className="mb-1.5 block text-sm font-medium text-[#1A2332]">Full Name</label>
-            <input id="full_name" name="full_name" type="text" required className="w-full rounded-lg border border-[#E8ECF1] px-3 py-3 text-[#1A2332] shadow-sm outline-none transition focus:border-[#0D8070] focus:ring-2 focus:ring-[#0D8070]/20" />
+            <input id="full_name" name="full_name" type="text" required className="w-full rounded-lg border border-[#E8ECF1] px-3 py-3 text-[#1A2332] shadow-sm outline-none transition focus:border-[#3B82F6] focus:ring-2 focus:ring-[#3B82F6]/20" />
           </div>
           <div>
             <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-[#1A2332]">Email</label>
-            <input id="email" name="email" type="email" required className="w-full rounded-lg border border-[#E8ECF1] px-3 py-3 text-[#1A2332] shadow-sm outline-none transition focus:border-[#0D8070] focus:ring-2 focus:ring-[#0D8070]/20" />
+            <input id="email" name="email" type="email" required className="w-full rounded-lg border border-[#E8ECF1] px-3 py-3 text-[#1A2332] shadow-sm outline-none transition focus:border-[#3B82F6] focus:ring-2 focus:ring-[#3B82F6]/20" />
           </div>
           <div>
             <label htmlFor="password" className="mb-1.5 block text-sm font-medium text-[#1A2332]">Password</label>
-            <input id="password" name="password" type="password" minLength={6} required className="w-full rounded-lg border border-[#E8ECF1] px-3 py-3 text-[#1A2332] shadow-sm outline-none transition focus:border-[#0D8070] focus:ring-2 focus:ring-[#0D8070]/20" />
+            <input id="password" name="password" type="password" minLength={6} required className="w-full rounded-lg border border-[#E8ECF1] px-3 py-3 text-[#1A2332] shadow-sm outline-none transition focus:border-[#3B82F6] focus:ring-2 focus:ring-[#3B82F6]/20" />
           </div>
-          <button type="submit" className="w-full rounded-lg bg-[#E07A5F] px-4 py-3 font-semibold text-white transition-colors hover:bg-[#C4654D]">Create Account</button>
+          <button type="submit" className="w-full rounded-lg bg-[#3B82F6] px-4 py-3 font-semibold text-white transition-colors hover:bg-[#2563EB]">Create Account</button>
         </form>
 
         <div className="my-6 border-t border-[#E8ECF1]" />
         <p className="text-center text-sm text-[#5A6578]">
           Already have an account?{" "}
-          <Link href="/login" className="font-semibold text-[#0D8070] hover:underline">Sign in</Link>
+          <Link href="/login" className="font-semibold text-[#3B82F6] hover:underline">Sign in</Link>
         </p>
       </section>
     </main>

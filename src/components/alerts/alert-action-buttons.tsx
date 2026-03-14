@@ -36,7 +36,7 @@ export function AlertActionButtons({
         type="button"
         disabled={isPending}
         onClick={() => startTransition(async () => { await resolveAlert(alertId); })}
-        className="rounded-lg bg-[#E6F5F0] px-3 py-1.5 text-xs font-medium text-[#0B2340] transition hover:bg-[#D4EDDA] disabled:opacity-50"
+        className="rounded-lg bg-[#DCFCE7] px-3 py-1.5 text-xs font-medium text-[#0B2340] transition hover:bg-[#DCFCE7] disabled:opacity-50"
       >
         {isPending ? "..." : "Resolve"}
       </button>

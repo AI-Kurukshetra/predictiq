@@ -28,11 +28,11 @@ const sensorIcons: Record<string, typeof Activity> = {
 
 function getValueColor(value: number | null, min: number | null, max: number | null) {
   if (value == null) return "text-[#8C95A6]";
-  if (max != null && value >= max) return "text-[#8B2252]";
-  if (max != null && value >= max * 0.9) return "text-[#0D8070]";
-  if (min != null && value <= min) return "text-[#8B2252]";
-  if (min != null && value <= min * 1.1) return "text-[#0D8070]";
-  return "text-[#0D8070]";
+  if (max != null && value >= max) return "text-[#F53642]";
+  if (max != null && value >= max * 0.9) return "text-[#F59E0B]";
+  if (min != null && value <= min) return "text-[#F53642]";
+  if (min != null && value <= min * 1.1) return "text-[#F59E0B]";
+  return "text-[#2ADE6B]";
 }
 
 function SensorRow({
@@ -60,7 +60,7 @@ function SensorRow({
             {sensor.type.charAt(0).toUpperCase() + sensor.type.slice(1)} ({sensor.unit})
           </p>
           <div className="flex items-center gap-2 text-xs">
-            <span className={sensor.is_active ? "text-[#0D8070]" : "text-[#8C95A6]"}>
+            <span className={sensor.is_active ? "text-[#3B82F6]" : "text-[#8C95A6]"}>
               {sensor.is_active ? "● Active" : "● Inactive"}
             </span>
           </div>
@@ -82,7 +82,7 @@ function SensorRow({
               type="number"
               value={minVal}
               onChange={(e) => setMinVal(Number(e.target.value))}
-              className="w-20 rounded border border-[#E8ECF1] px-2 py-1 text-center text-sm focus:outline-none focus:ring-1 focus:ring-[#0D8070]"
+              className="w-20 rounded border border-[#E8ECF1] px-2 py-1 text-center text-sm focus:outline-none focus:ring-1 focus:ring-[#3B82F6]"
             />
           ) : (
             <p className="text-sm text-[#1A2332]">{sensor.min_threshold ?? "—"}</p>
@@ -96,7 +96,7 @@ function SensorRow({
               type="number"
               value={maxVal}
               onChange={(e) => setMaxVal(Number(e.target.value))}
-              className="w-20 rounded border border-[#E8ECF1] px-2 py-1 text-center text-sm focus:outline-none focus:ring-1 focus:ring-[#0D8070]"
+              className="w-20 rounded border border-[#E8ECF1] px-2 py-1 text-center text-sm focus:outline-none focus:ring-1 focus:ring-[#3B82F6]"
             />
           ) : (
             <p className="text-sm text-[#1A2332]">{sensor.max_threshold ?? "—"}</p>
@@ -123,10 +123,10 @@ function SensorRow({
             }}
             className={`rounded-lg px-3 py-1.5 text-xs font-medium transition disabled:opacity-50 ${
               saveStatus === "saved"
-                ? "bg-[#E6F5F0] text-[#0A5E52]"
+                ? "bg-[#DCFCE7] text-[#166534]"
                 : saveStatus === "error"
-                  ? "bg-[#F0E4E8] text-[#6B1D3A]"
-                  : "bg-[#DBEAFE] text-[#1E40AF] hover:bg-[#c5d8f8]"
+                  ? "bg-[#FEE2E2] text-[#991B1B]"
+                  : "bg-[#DBEAFE] text-[#1E40AF] hover:bg-[#DBEAFE]"
             }`}
           >
             {isPending ? "..." : saveStatus === "saved" ? "\u2713 Saved" : saveStatus === "error" ? "Failed" : "Save"}
@@ -134,7 +134,7 @@ function SensorRow({
         )}
       </div>
       {errorMsg && (
-        <p className="px-4 pb-2 text-xs text-[#6B1D3A]">{errorMsg}</p>
+        <p className="px-4 pb-2 text-xs text-[#991B1B]">{errorMsg}</p>
       )}
     </div>
   );

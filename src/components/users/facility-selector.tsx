@@ -30,7 +30,7 @@ export function FacilitySelector({
           await updateUserFacility(userId, value);
         });
       }}
-      className="rounded-lg border border-[#E8ECF1] px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-[#0D8070] disabled:opacity-50"
+      className="rounded-lg border border-[#E8ECF1] px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-[#3B82F6] disabled:opacity-50"
     >
       <option value="">All Facilities</option>
       {facilities.map((f) => (

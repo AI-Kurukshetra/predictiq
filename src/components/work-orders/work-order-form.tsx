@@ -10,7 +10,7 @@ function SubmitButton() {
     <button
       type="submit"
       disabled={pending}
-      className="rounded-lg bg-[#E07A5F] px-4 py-2.5 text-sm font-medium text-white transition hover:bg-[#C4654D] disabled:opacity-50 disabled:cursor-not-allowed"
+      className="rounded-lg bg-[#3B82F6] px-4 py-2.5 text-sm font-medium text-white transition hover:bg-[#2563EB] disabled:opacity-50 disabled:cursor-not-allowed"
     >
       {pending ? "Creating..." : "Create Work Order"}
     </button>
@@ -50,14 +50,14 @@ export function WorkOrderForm({
               htmlFor="title"
               className="mb-1 block text-sm font-medium text-[#1A2332]"
             >
-              Title <span className="text-[#8B2252]">*</span>
+              Title <span className="text-[#F53642]">*</span>
             </label>
             <input
               type="text"
               id="title"
               name="title"
               required
-              className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#0D8070]"
+              className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#3B82F6]"
             />
           </div>
           <div>
@@ -65,14 +65,14 @@ export function WorkOrderForm({
               htmlFor="equipment_id"
               className="mb-1 block text-sm font-medium text-[#1A2332]"
             >
-              Equipment <span className="text-[#8B2252]">*</span>
+              Equipment <span className="text-[#F53642]">*</span>
             </label>
             <select
               id="equipment_id"
               name="equipment_id"
               required
               defaultValue={defaultEquipmentId ?? ""}
-              className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#0D8070]"
+              className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#3B82F6]"
             >
               <option value="" disabled>
                 Select equipment
@@ -98,7 +98,7 @@ export function WorkOrderForm({
             id="description"
             name="description"
             rows={4}
-            className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#0D8070]"
+            className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#3B82F6]"
           />
         </div>
 
@@ -115,7 +115,7 @@ export function WorkOrderForm({
               id="priority"
               name="priority"
               defaultValue="medium"
-              className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#0D8070]"
+              className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#3B82F6]"
             >
               <option value="low">Low</option>
               <option value="medium">Medium</option>
@@ -134,7 +134,7 @@ export function WorkOrderForm({
               id="assigned_to_name"
               name="assigned_to_name"
               defaultValue=""
-              className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#0D8070]"
+              className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#3B82F6]"
             >
               <option value="">Select technician</option>
               {technicians.map((tech) => (
@@ -160,7 +160,7 @@ export function WorkOrderForm({
               id="due_date"
               name="due_date"
               min={new Date().toISOString().split('T')[0]}
-              className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#0D8070]"
+              className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#3B82F6]"
             />
           </div>
           <div>
@@ -177,7 +177,7 @@ export function WorkOrderForm({
               min="0"
               step="0.01"
               placeholder="0.00"
-              className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#0D8070]"
+              className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#3B82F6]"
             />
           </div>
         </div>
@@ -194,7 +194,7 @@ export function WorkOrderForm({
             id="notes"
             name="notes"
             rows={3}
-            className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#0D8070]"
+            className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#3B82F6]"
           />
         </div>
 

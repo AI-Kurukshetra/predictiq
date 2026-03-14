@@ -30,7 +30,7 @@ export function FacilitySwitcher({ facilities }: { facilities: Facility[] }) {
       <select
         value={currentFacility}
         onChange={(e) => handleChange(e.target.value)}
-        className="rounded-lg border border-[#E8ECF1] px-3 py-1.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#0D8070]"
+        className="rounded-lg border border-[#E8ECF1] px-3 py-1.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#3B82F6]"
       >
         <option value="">All Facilities</option>
         {facilities.map((f) => (

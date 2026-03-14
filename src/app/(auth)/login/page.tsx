@@ -25,15 +25,15 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
             <p className="mt-4 text-xl text-[#8C95A6]">AI-Powered Predictive Maintenance</p>
             <ul className="mt-10 space-y-5">
               <li className="flex items-center gap-3 text-[#8C95A6]">
-                <Activity className="h-5 w-5 text-[#0D8070]" />
+                <Activity className="h-5 w-5 text-[#3B82F6]" />
                 <span>Real-time equipment monitoring</span>
               </li>
               <li className="flex items-center gap-3 text-[#8C95A6]">
-                <Shield className="h-5 w-5 text-[#0D8070]" />
+                <Shield className="h-5 w-5 text-[#3B82F6]" />
                 <span>Predict failures 12+ days ahead</span>
               </li>
               <li className="flex items-center gap-3 text-[#8C95A6]">
-                <TrendingUp className="h-5 w-5 text-[#0D8070]" />
+                <TrendingUp className="h-5 w-5 text-[#3B82F6]" />
                 <span>Reduce downtime by 40%</span>
               </li>
             </ul>
@@ -48,13 +48,13 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
           <p className="mt-2 text-sm text-[#5A6578]">Sign in to your account</p>
 
           {error ? (
-            <div className="mt-4 rounded-lg border border-[#F0E4E8] bg-[#F0E4E8] px-3 py-2 text-sm text-[#6B1D3A]">
+            <div className="mt-4 rounded-lg border border-[#FEE2E2] bg-[#FEE2E2] px-3 py-2 text-sm text-[#991B1B]">
               {error}
             </div>
           ) : null}
 
           {message ? (
-            <div className="mt-4 rounded-lg border border-[#E6F5F0] bg-[#E6F5F0] px-3 py-2 text-sm text-[#0A5E52]">
+            <div className="mt-4 rounded-lg border border-[#DCFCE7] bg-[#DCFCE7] px-3 py-2 text-sm text-[#166534]">
               {message}
             </div>
           ) : null}
@@ -69,7 +69,7 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
                 name="email"
                 type="email"
                 required
-                className="w-full rounded-lg border border-[#E8ECF1] px-3 py-3 text-[#1A2332] shadow-sm outline-none transition focus:border-[#0D8070] focus:ring-2 focus:ring-[#0D8070]/20 focus:shadow-md"
+                className="w-full rounded-lg border border-[#E8ECF1] px-3 py-3 text-[#1A2332] shadow-sm outline-none transition focus:border-[#3B82F6] focus:ring-2 focus:ring-[#3B82F6]/20 focus:shadow-md"
               />
             </div>
 
@@ -82,13 +82,13 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
                 name="password"
                 type="password"
                 required
-                className="w-full rounded-lg border border-[#E8ECF1] px-3 py-3 text-[#1A2332] shadow-sm outline-none transition focus:border-[#0D8070] focus:ring-2 focus:ring-[#0D8070]/20 focus:shadow-md"
+                className="w-full rounded-lg border border-[#E8ECF1] px-3 py-3 text-[#1A2332] shadow-sm outline-none transition focus:border-[#3B82F6] focus:ring-2 focus:ring-[#3B82F6]/20 focus:shadow-md"
               />
             </div>
 
             <button
               type="submit"
-              className="w-full rounded-lg bg-[#E07A5F] px-4 py-3 font-semibold text-white transition-colors hover:bg-[#C4654D]"
+              className="w-full rounded-lg bg-[#3B82F6] px-4 py-3 font-semibold text-white transition-colors hover:bg-[#2563EB]"
             >
               Sign In
             </button>
@@ -98,7 +98,7 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
 
           <p className="text-center text-sm text-[#5A6578]">
             Don&apos;t have an account?{" "}
-            <Link href="/signup" className="font-semibold text-[#0D8070] hover:underline">
+            <Link href="/signup" className="font-semibold text-[#3B82F6] hover:underline">
               Sign up
             </Link>
           </p>

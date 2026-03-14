@@ -22,9 +22,9 @@ export function HealthDistributionChart({
   critical,
 }: HealthDistributionChartProps) {
   const data = [
-    { name: "Healthy", count: healthy, color: "#0D8070" },
-    { name: "Warning", count: warning, color: "#E07A5F" },
-    { name: "Critical", count: critical, color: "#8B2252" },
+    { name: "Healthy", count: healthy, color: "#2ADE6B" },
+    { name: "Warning", count: warning, color: "#F59E0B" },
+    { name: "Critical", count: critical, color: "#F53642" },
   ];
 
   return (

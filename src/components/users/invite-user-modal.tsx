@@ -64,7 +64,7 @@ export function InviteUserModal({
         {success ? (
           <div className="space-y-4 text-center">
             <div className="flex justify-center">
-              <CheckCircle className="h-12 w-12 text-[#0D8070]" />
+              <CheckCircle className="h-12 w-12 text-[#3B82F6]" />
             </div>
             <h3 className="text-lg font-semibold text-[#1A2332]">User Created Successfully</h3>
             <p className="text-sm text-[#5A6578]">
@@ -79,7 +79,7 @@ export function InviteUserModal({
             <button
               type="button"
               onClick={onClose}
-              className="w-full rounded-lg bg-[#E07A5F] px-4 py-2.5 text-sm font-medium text-white transition hover:bg-[#C4654D]"
+              className="w-full rounded-lg bg-[#3B82F6] px-4 py-2.5 text-sm font-medium text-white transition hover:bg-[#2563EB]"
             >
               Done
             </button>
@@ -101,7 +101,7 @@ export function InviteUserModal({
                   name="full_name"
                   type="text"
                   required
-                  className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2 text-sm text-[#1A2332] outline-none focus:border-[#0D8070] focus:ring-1 focus:ring-[#0D8070]"
+                  className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2 text-sm text-[#1A2332] outline-none focus:border-[#3B82F6] focus:ring-1 focus:ring-[#3B82F6]"
                   placeholder="John Doe"
                 />
               </div>
@@ -118,7 +118,7 @@ export function InviteUserModal({
                   name="email"
                   type="email"
                   required
-                  className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2 text-sm text-[#1A2332] outline-none focus:border-[#0D8070] focus:ring-1 focus:ring-[#0D8070]"
+                  className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2 text-sm text-[#1A2332] outline-none focus:border-[#3B82F6] focus:ring-1 focus:ring-[#3B82F6]"
                   placeholder="user@example.com"
                 />
               </div>
@@ -134,7 +134,7 @@ export function InviteUserModal({
                   id="role"
                   name="role"
                   defaultValue="technician"
-                  className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2 text-sm text-[#1A2332] outline-none focus:border-[#0D8070] focus:ring-1 focus:ring-[#0D8070]"
+                  className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2 text-sm text-[#1A2332] outline-none focus:border-[#3B82F6] focus:ring-1 focus:ring-[#3B82F6]"
                 >
                   <option value="technician">Technician</option>
                   <option value="manager">Manager</option>
@@ -153,7 +153,7 @@ export function InviteUserModal({
                   id="facility_id"
                   name="facility_id"
                   defaultValue=""
-                  className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2 text-sm text-[#1A2332] outline-none focus:border-[#0D8070] focus:ring-1 focus:ring-[#0D8070]"
+                  className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2 text-sm text-[#1A2332] outline-none focus:border-[#3B82F6] focus:ring-1 focus:ring-[#3B82F6]"
                 >
                   <option value="">All Facilities</option>
                   {facilities.map((f) => (
@@ -165,7 +165,7 @@ export function InviteUserModal({
               </div>
 
               {error && (
-                <p className="rounded-lg bg-[#F0E4E8] px-3 py-2 text-sm text-[#6B1D3A]">
+                <p className="rounded-lg bg-[#FEE2E2] px-3 py-2 text-sm text-[#991B1B]">
                   {error}
                 </p>
               )}
@@ -181,7 +181,7 @@ export function InviteUserModal({
                 <button
                   type="submit"
                   disabled={isPending}
-                  className="rounded-lg bg-[#E07A5F] px-4 py-2 text-sm font-medium text-white transition hover:bg-[#C4654D] disabled:opacity-50"
+                  className="rounded-lg bg-[#3B82F6] px-4 py-2 text-sm font-medium text-white transition hover:bg-[#2563EB] disabled:opacity-50"
                 >
                   {isPending ? "Adding..." : "Invite User"}
                 </button>

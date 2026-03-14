@@ -15,9 +15,9 @@ interface Notification {
 }
 
 const severityColor: Record<string, string> = {
-  critical: "bg-[#8B2252]",
-  major: "bg-[#E07A5F]",
-  minor: "bg-[#E07A5F]",
+  critical: "bg-[#F53642]",
+  major: "bg-[#F59E0B]",
+  minor: "bg-[#F59E0B]",
   info: "bg-[#3B82F6]",
 };
 
@@ -58,7 +58,7 @@ export function NotificationBell({
       >
         <Bell className="h-5 w-5" />
         {initialCount > 0 && (
-          <span className="absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-[#8B2252] text-[10px] font-bold text-white">
+          <span className="absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-[#F53642] text-[10px] font-bold text-white">
             {initialCount > 9 ? "9+" : initialCount}
           </span>
         )}
@@ -78,7 +78,7 @@ export function NotificationBell({
                     setOpen(false);
                   });
                 }}
-                className="text-xs font-medium text-[#0D8070] hover:underline disabled:opacity-50"
+                className="text-xs font-medium text-[#3B82F6] hover:underline disabled:opacity-50"
               >
                 {isPending ? "Marking..." : "Mark all read"}
               </button>
@@ -116,7 +116,7 @@ export function NotificationBell({
             <button
               type="button"
               onClick={() => { setOpen(false); router.push("/alerts"); }}
-              className="w-full text-center text-xs font-medium text-[#0D8070] hover:underline"
+              className="w-full text-center text-xs font-medium text-[#3B82F6] hover:underline"
             >
               View all alerts
             </button>

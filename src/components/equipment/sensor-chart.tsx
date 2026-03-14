@@ -35,7 +35,7 @@ function AnomalyDot(props: Record<string, unknown>) {
     payload: Reading;
   };
   if (!payload?.is_anomaly) return null;
-  return <circle cx={cx} cy={cy} r={4} fill="#8B2252" stroke="none" />;
+  return <circle cx={cx} cy={cy} r={4} fill="#F53642" stroke="none" />;
 }
 
 function ChartTooltip({
@@ -55,7 +55,7 @@ function ChartTooltip({
         {d.value} {unit}
       </p>
       <p className="text-[#5A6578]">{d.time}</p>
-      {d.is_anomaly && <p className="mt-0.5 font-semibold text-[#8B2252]">Anomaly</p>}
+      {d.is_anomaly && <p className="mt-0.5 font-semibold text-[#F53642]">Anomaly</p>}
     </div>
   );
 }
@@ -85,8 +85,8 @@ export function SensorChart({
       <LineChart data={data} margin={{ top: 8, right: 16, bottom: 0, left: 0 }}>
         <defs>
           <linearGradient id={`fill-${sensorType}`} x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#0D8070" stopOpacity={0.1} />
-            <stop offset="100%" stopColor="#0D8070" stopOpacity={0} />
+            <stop offset="0%" stopColor="#3B82F6" stopOpacity={0.1} />
+            <stop offset="100%" stopColor="#3B82F6" stopOpacity={0} />
           </linearGradient>
         </defs>
 
@@ -118,17 +118,17 @@ export function SensorChart({
         {maxThreshold != null && (
           <ReferenceLine
             y={maxThreshold}
-            stroke="#8B2252"
+            stroke="#F53642"
             strokeDasharray="6 3"
-            label={{ value: "Max", position: "right", fill: "#8B2252", fontSize: 11 }}
+            label={{ value: "Max", position: "right", fill: "#F53642", fontSize: 11 }}
           />
         )}
         {minThreshold != null && (
           <ReferenceLine
             y={minThreshold}
-            stroke="#0D8070"
+            stroke="#3B82F6"
             strokeDasharray="6 3"
-            label={{ value: "Min", position: "right", fill: "#0D8070", fontSize: 11 }}
+            label={{ value: "Min", position: "right", fill: "#3B82F6", fontSize: 11 }}
           />
         )}
 
@@ -142,10 +142,10 @@ export function SensorChart({
         <Line
           type="monotone"
           dataKey="value"
-          stroke="#0D8070"
+          stroke="#3B82F6"
           strokeWidth={2}
           dot={<AnomalyDot />}
-          activeDot={{ r: 4, fill: "#0D8070" }}
+          activeDot={{ r: 4, fill: "#3B82F6" }}
         />
       </LineChart>
     </ResponsiveContainer>

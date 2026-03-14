@@ -14,7 +14,7 @@ const priorityBadge = (priority: string) => {
     case "high":
       return { variant: "warning" as const, className: "" };
     case "medium":
-      return { variant: "default" as const, className: "bg-[#FFF0EB] text-[#8B3A1F]" };
+      return { variant: "default" as const, className: "bg-[#FEF3C7] text-[#92400E]" };
     case "low":
       return { variant: "info" as const, className: "" };
     default:
@@ -88,7 +88,7 @@ export default async function WorkOrdersPage({
           {canCreate && (
             <Link
               href="/work-orders/new"
-              className="inline-flex items-center gap-2 rounded-lg bg-[#E07A5F] px-4 py-2.5 text-sm font-medium text-white transition hover:bg-[#C4654D]"
+              className="inline-flex items-center gap-2 rounded-lg bg-[#3B82F6] px-4 py-2.5 text-sm font-medium text-white transition hover:bg-[#2563EB]"
             >
               <Plus className="h-4 w-4" />
               Create Work Order
@@ -105,10 +105,10 @@ export default async function WorkOrdersPage({
         <span className="rounded-full bg-[#DBEAFE] px-3 py-1 text-sm font-medium text-[#1E40AF]">
           Open: {stats.open}
         </span>
-        <span className="rounded-full bg-[#FFF0EB] px-3 py-1 text-sm font-medium text-[#0A6B5E]">
+        <span className="rounded-full bg-[#FEF3C7] px-3 py-1 text-sm font-medium text-[#166534]">
           In Progress: {stats.in_progress}
         </span>
-        <span className="rounded-full bg-[#E6F5F0] px-3 py-1 text-sm font-medium text-[#0B2340]">
+        <span className="rounded-full bg-[#DCFCE7] px-3 py-1 text-sm font-medium text-[#0B2340]">
           Completed: {stats.completed}
         </span>
         <span className="rounded-full bg-[#F5F6FA] px-3 py-1 text-sm font-medium text-[#8C95A6]">
@@ -203,7 +203,7 @@ export default async function WorkOrdersPage({
                     <td className="px-4 py-3">
                       <Link
                         href={`/equipment/${wo.equipment_id}`}
-                        className="font-medium text-[#0D8070] hover:underline"
+                        className="font-medium text-[#3B82F6] hover:underline"
                       >
                         {equipmentName ?? "Unknown"}
                       </Link>
@@ -222,7 +222,7 @@ export default async function WorkOrdersPage({
                     </td>
                     <td className="hidden px-4 py-3 md:table-cell">
                       {wo.due_date ? (
-                        <span className={isOverdue ? "font-medium text-[#8B2252]" : "text-[#1A2332]"}>
+                        <span className={isOverdue ? "font-medium text-[#F53642]" : "text-[#1A2332]"}>
                           {format(new Date(wo.due_date), "MMM dd, yyyy")}
                         </span>
                       ) : (

@@ -17,9 +17,9 @@ const ACTION_FILTERS = [
 
 const actionBadgeStyle = (action: string) => {
   if (action.includes("ALERT")) return "bg-[#DBEAFE] text-[#1E40AF]";
-  if (action.includes("WORK_ORDER") || action.includes("WO_STATUS")) return "bg-[#E6F5F0] text-[#0B2340]";
-  if (action.includes("USER") || action.includes("ROLE")) return "bg-[#FFF0EB] text-[#8B3A1F]";
-  if (action.includes("PREDICTION")) return "bg-[#FFF0EB] text-[#8B3A1F]";
+  if (action.includes("WORK_ORDER") || action.includes("WO_STATUS")) return "bg-[#DCFCE7] text-[#0B2340]";
+  if (action.includes("USER") || action.includes("ROLE")) return "bg-[#FEF3C7] text-[#92400E]";
+  if (action.includes("PREDICTION")) return "bg-[#FEF3C7] text-[#92400E]";
   return "bg-[#F5F6FA] text-[#5A6578]";
 };
 

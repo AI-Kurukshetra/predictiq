@@ -31,9 +31,9 @@ const allNavItems = [
 ];
 
 const roleBadgeConfig: Record<Role, { label: string; bg: string; text: string }> = {
-  manager: { label: "Plant Manager", bg: "bg-[#0D8070]/20", text: "text-[#5BBFB5]" },
-  technician: { label: "Technician", bg: "bg-[#E07A5F]/20", text: "text-[#E8A08D]" },
-  admin: { label: "Administrator", bg: "bg-[#4A90D9]/20", text: "text-[#7EB3E8]" },
+  manager: { label: "Plant Manager", bg: "bg-[#3B82F6]/20", text: "text-[#93C5FD]" },
+  technician: { label: "Technician", bg: "bg-[#3B82F6]/20", text: "text-[#93C5FD]" },
+  admin: { label: "Administrator", bg: "bg-[#3B82F6]/20", text: "text-[#93C5FD]" },
 };
 
 export function Sidebar({ role = "technician" }: { role?: Role }) {
@@ -70,7 +70,7 @@ export function Sidebar({ role = "technician" }: { role?: Role }) {
                 className={cn(
                   "flex items-center gap-3 rounded-r-md border-l-[3px] px-4 py-2.5 text-sm font-medium transition-colors",
                   isActive
-                    ? "border-l-[#E07A5F] bg-[#1A3760] text-white"
+                    ? "border-l-[#3B82F6] bg-[#1A3760] text-white"
                     : "border-l-transparent text-[#8C95A6] hover:bg-[#132D4F]"
                 )}
               >

@@ -32,12 +32,12 @@ interface EquipmentData {
   }[];
 }
 
-const COLORS = ["#0D8070", "#E07A5F", "#3B82F6"];
+const COLORS = ["#3B82F6", "#F59E0B", "#F53642"];
 
 const getHealthColor = (score: number) => {
-  if (score >= 80) return "#0D8070";
-  if (score >= 50) return "#E07A5F";
-  return "#8B2252";
+  if (score >= 80) return "#2ADE6B";
+  if (score >= 50) return "#F59E0B";
+  return "#F53642";
 };
 
 const statusVariant = (s: string) => {

@@ -174,7 +174,7 @@ export default async function AnalyticsPage() {
       <section className="grid gap-4 md:grid-cols-4">
         <div className="rounded-xl border border-[#E8ECF1] bg-white p-6">
           <p className="text-sm text-[#5A6578]">Avg Uptime</p>
-          <p className="mt-1 text-3xl font-bold text-[#0D8070]">{uptimePct}%</p>
+          <p className="mt-1 text-3xl font-bold text-[#3B82F6]">{uptimePct}%</p>
         </div>
         <div className="rounded-xl border border-[#E8ECF1] bg-white p-6">
           <p className="text-sm text-[#5A6578]">MTBF</p>
@@ -182,11 +182,11 @@ export default async function AnalyticsPage() {
         </div>
         <div className="rounded-xl border border-[#E8ECF1] bg-white p-6">
           <p className="text-sm text-[#5A6578]">MTTR</p>
-          <p className="mt-1 text-3xl font-bold text-[#0D8070]">{avgMttr} hrs</p>
+          <p className="mt-1 text-3xl font-bold text-[#3B82F6]">{avgMttr} hrs</p>
         </div>
         <div className="rounded-xl border border-[#E8ECF1] bg-white p-6">
           <p className="text-sm text-[#5A6578]">Cost Savings</p>
-          <p className="mt-1 text-3xl font-bold text-[#0D8070]">
+          <p className="mt-1 text-3xl font-bold text-[#3B82F6]">
             ${Math.abs(costSavings).toLocaleString()} {costSavings >= 0 ? "saved" : "over"}
           </p>
         </div>
@@ -235,17 +235,17 @@ export default async function AnalyticsPage() {
       <section className="grid gap-4 md:grid-cols-3">
         <div className="rounded-xl border border-[#E8ECF1] bg-white p-6">
           <p className="text-sm text-[#5A6578]">Without PredictIQ</p>
-          <p className="mt-1 text-3xl font-bold text-[#8B2252]">${predictedFailureCost.toLocaleString()}</p>
+          <p className="mt-1 text-3xl font-bold text-[#F53642]">${predictedFailureCost.toLocaleString()}</p>
           <p className="mt-1 text-xs text-[#5A6578]">Predicted Failure Cost</p>
         </div>
         <div className="rounded-xl border border-[#E8ECF1] bg-white p-6">
           <p className="text-sm text-[#5A6578]">With PredictIQ</p>
-          <p className="mt-1 text-3xl font-bold text-[#0D8070]">${actualMaintenanceCost.toLocaleString()}</p>
+          <p className="mt-1 text-3xl font-bold text-[#3B82F6]">${actualMaintenanceCost.toLocaleString()}</p>
           <p className="mt-1 text-xs text-[#5A6578]">Actual Maintenance Cost</p>
         </div>
         <div className="rounded-xl border border-[#E8ECF1] bg-white p-6">
           <p className="text-sm text-[#5A6578]">Net Savings</p>
-          <p className="mt-1 text-3xl font-bold text-[#0D8070]">
+          <p className="mt-1 text-3xl font-bold text-[#3B82F6]">
             ${Math.abs(netSavings).toLocaleString()} {netSavings >= 0 ? "saved" : "over"}
           </p>
         </div>

@@ -70,7 +70,7 @@ export default async function SettingsPage() {
               id="full_name"
               name="full_name"
               defaultValue={profile?.full_name ?? ""}
-              className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#0D8070]"
+              className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#3B82F6]"
             />
           </div>
           <div>
@@ -98,7 +98,7 @@ export default async function SettingsPage() {
           </div>
           <button
             type="submit"
-            className="rounded-lg bg-[#E07A5F] px-4 py-2.5 text-sm font-medium text-white transition hover:bg-[#C4654D]"
+            className="rounded-lg bg-[#3B82F6] px-4 py-2.5 text-sm font-medium text-white transition hover:bg-[#2563EB]"
           >
             Save Changes
           </button>
@@ -123,7 +123,7 @@ export default async function SettingsPage() {
               <input
                 type="checkbox"
                 defaultChecked={item.defaultChecked}
-                className="h-4 w-4 rounded border-[#E8ECF1] text-[#0D8070] focus:ring-[#0D8070]"
+                className="h-4 w-4 rounded border-[#E8ECF1] text-[#3B82F6] focus:ring-[#3B82F6]"
               />
             </label>
           ))}

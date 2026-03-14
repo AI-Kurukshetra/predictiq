@@ -4,9 +4,9 @@ import type { HTMLAttributes } from "react";
 type BadgeVariant = "healthy" | "warning" | "critical" | "info" | "default";
 
 const variantClasses: Record<BadgeVariant, string> = {
-  healthy: "bg-[#E6F5F0] text-[#0A5E52]",
-  warning: "bg-[#FFF0EB] text-[#8B3A1F]",
-  critical: "bg-[#F0E4E8] text-[#6B1D3A]",
+  healthy: "bg-[#DCFCE7] text-[#166534]",
+  warning: "bg-[#FEF3C7] text-[#92400E]",
+  critical: "bg-[#FEE2E2] text-[#991B1B]",
   info: "bg-[#DBEAFE] text-[#1E40AF]",
   default: "bg-[#F5F6FA] text-[#5A6578]",
 };

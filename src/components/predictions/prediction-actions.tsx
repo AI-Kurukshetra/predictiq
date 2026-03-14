@@ -28,8 +28,8 @@ export function PredictionActions({ predictionId }: { predictionId: string }) {
         }
         className={
           created
-            ? "rounded-lg px-4 py-2 text-sm font-medium text-[#0D8070]"
-            : "rounded-lg bg-[#E07A5F] px-4 py-2 text-sm font-medium text-white transition hover:bg-[#C4654D] disabled:opacity-50"
+            ? "rounded-lg px-4 py-2 text-sm font-medium text-[#3B82F6]"
+            : "rounded-lg bg-[#3B82F6] px-4 py-2 text-sm font-medium text-white transition hover:bg-[#2563EB] disabled:opacity-50"
         }
       >
         {created
@@ -47,7 +47,7 @@ export function PredictionActions({ predictionId }: { predictionId: string }) {
             router.refresh();
           })
         }
-        className="rounded-lg border border-[#0D8070] px-4 py-2 text-sm font-medium text-[#0D8070] transition hover:bg-[#E6F5F0] disabled:opacity-50"
+        className="rounded-lg border border-[#3B82F6] px-4 py-2 text-sm font-medium text-[#3B82F6] transition hover:bg-[#DCFCE7] disabled:opacity-50"
       >
         Mark Resolved
       </button>

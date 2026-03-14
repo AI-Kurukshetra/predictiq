@@ -11,7 +11,7 @@ export function DeleteUserButton({ userId }: { userId: string }) {
   if (confirming) {
     return (
       <div className="flex items-center gap-2">
-        <span className="text-xs text-[#6B1D3A]">Are you sure?</span>
+        <span className="text-xs text-[#991B1B]">Are you sure?</span>
         <button
           type="button"
           disabled={isPending}
@@ -21,7 +21,7 @@ export function DeleteUserButton({ userId }: { userId: string }) {
               setConfirming(false);
             })
           }
-          className="rounded px-2 py-1 text-xs font-medium text-white bg-[#8B2252] hover:bg-[#6B1D3A] disabled:opacity-50"
+          className="rounded px-2 py-1 text-xs font-medium text-white bg-[#F53642] hover:bg-[#991B1B] disabled:opacity-50"
         >
           {isPending ? "..." : "Yes"}
         </button>
@@ -40,7 +40,7 @@ export function DeleteUserButton({ userId }: { userId: string }) {
     <button
       type="button"
       onClick={() => setConfirming(true)}
-      className="rounded p-1 text-[#8B2252] hover:bg-[#F0E4E8]"
+      className="rounded p-1 text-[#F53642] hover:bg-[#FEE2E2]"
       title="Delete user"
     >
       <Trash2 className="h-4 w-4" />

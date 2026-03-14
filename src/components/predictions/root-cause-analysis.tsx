@@ -43,7 +43,7 @@ export function RootCauseAnalysis({ predictionId }: { predictionId: string }) {
         <button
           type="button"
           onClick={analyze}
-          className="inline-flex items-center gap-1.5 rounded-lg border border-[#E07A5F] px-3 py-1.5 text-xs font-medium text-[#0D8070] transition hover:bg-[#FFF8F5]"
+          className="inline-flex items-center gap-1.5 rounded-lg border border-[#3B82F6] px-3 py-1.5 text-xs font-medium text-[#3B82F6] transition hover:bg-[#F5F6FA]"
         >
           <Sparkles className="h-3.5 w-3.5" />
           AI Root Cause Analysis
@@ -51,7 +51,7 @@ export function RootCauseAnalysis({ predictionId }: { predictionId: string }) {
       )}
 
       {visible && (
-        <div className="mt-3 rounded-xl border border-[#E07A5F]/20 bg-[#FFF8F5] p-5">
+        <div className="mt-3 rounded-xl border border-[#3B82F6]/20 bg-[#F5F6FA] p-5">
           {loading ? (
             <div className="space-y-3">
               <div className="h-4 w-1/2 animate-pulse rounded bg-[#E8ECF1]" />
@@ -62,12 +62,12 @@ export function RootCauseAnalysis({ predictionId }: { predictionId: string }) {
             <div className="space-y-4">
               <div className="flex items-center gap-2">
                 <span className="text-sm font-semibold text-[#1A2332]">Root Cause Analysis</span>
-                <span className="rounded-full bg-gradient-to-r from-[#E07A5F] to-[#0A6B5E] px-2 py-0.5 text-[10px] font-medium text-white">
+                <span className="rounded-full bg-gradient-to-r from-[#3B82F6] to-[#166534] px-2 py-0.5 text-[10px] font-medium text-white">
                   AI Generated
                 </span>
               </div>
 
-              <div className="border-l-4 border-[#E07A5F] bg-white p-3 rounded">
+              <div className="border-l-4 border-[#3B82F6] bg-white p-3 rounded">
                 <p className="text-sm font-semibold text-[#1A2332]">{result.primaryCause}</p>
               </div>
 
@@ -85,7 +85,7 @@ export function RootCauseAnalysis({ predictionId }: { predictionId: string }) {
                   <p className="text-xs font-medium text-[#5A6578]">Evidence:</p>
                   {result.evidence.map((e, i) => (
                     <div key={i} className="flex items-start gap-1.5 text-xs text-[#1A2332]">
-                      <CheckCircle className="mt-0.5 h-3 w-3 shrink-0 text-[#0D8070]" />
+                      <CheckCircle className="mt-0.5 h-3 w-3 shrink-0 text-[#3B82F6]" />
                       {e}
                     </div>
                   ))}
@@ -110,13 +110,13 @@ export function RootCauseAnalysis({ predictionId }: { predictionId: string }) {
 
               <Link
                 href="/work-orders/new"
-                className="inline-flex items-center gap-1.5 rounded-lg bg-[#E07A5F] px-3 py-1.5 text-xs font-medium text-white hover:bg-[#C4654D]"
+                className="inline-flex items-center gap-1.5 rounded-lg bg-[#3B82F6] px-3 py-1.5 text-xs font-medium text-white hover:bg-[#2563EB]"
               >
                 Create Work Order
               </Link>
             </div>
           ) : (
-            <p className="text-sm text-[#5A6578]">Unable to analyze. <button type="button" onClick={analyze} className="text-[#E07A5F] hover:underline">Retry</button></p>
+            <p className="text-sm text-[#5A6578]">Unable to analyze. <button type="button" onClick={analyze} className="text-[#3B82F6] hover:underline">Retry</button></p>
           )}
         </div>
       )}

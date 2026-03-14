@@ -57,7 +57,7 @@ export function PasswordForm() {
           name="new_password"
           required
           minLength={6}
-          className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#0D8070]"
+          className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#3B82F6]"
           placeholder="Enter new password"
         />
       </div>
@@ -74,19 +74,19 @@ export function PasswordForm() {
           name="confirm_password"
           required
           minLength={6}
-          className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#0D8070]"
+          className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#3B82F6]"
           placeholder="Confirm new password"
         />
       </div>
 
       {error && (
-        <p className="rounded-lg bg-[#F0E4E8] px-3 py-2 text-sm text-[#6B1D3A]">
+        <p className="rounded-lg bg-[#FEE2E2] px-3 py-2 text-sm text-[#991B1B]">
           {error}
         </p>
       )}
 
       {success && (
-        <p className="rounded-lg bg-[#E6F4F0] px-3 py-2 text-sm text-[#0D8070]">
+        <p className="rounded-lg bg-[#DCFCE7] px-3 py-2 text-sm text-[#3B82F6]">
           Password updated successfully
         </p>
       )}
@@ -94,7 +94,7 @@ export function PasswordForm() {
       <button
         type="submit"
         disabled={isPending}
-        className="rounded-lg bg-[#E07A5F] px-4 py-2.5 text-sm font-medium text-white transition hover:bg-[#C4654D] disabled:opacity-50"
+        className="rounded-lg bg-[#3B82F6] px-4 py-2.5 text-sm font-medium text-white transition hover:bg-[#2563EB] disabled:opacity-50"
       >
         {isPending ? "Updating..." : "Update Password"}
       </button>

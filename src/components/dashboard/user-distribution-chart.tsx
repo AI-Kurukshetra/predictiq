@@ -8,7 +8,7 @@ interface UserDistributionChartProps {
   admins: number;
 }
 
-const COLORS = ["#0D8070", "#E07A5F", "#8B2252"];
+const COLORS = ["#2ADE6B", "#F59E0B", "#F53642"];
 
 export function UserDistributionChart({
   managers,

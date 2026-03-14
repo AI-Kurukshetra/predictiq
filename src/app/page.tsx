@@ -8,17 +8,17 @@ function Logo({ size = 32 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 40 40" fill="none">
       <rect width="40" height="40" rx="10" fill="#0B2340" />
-      <circle cx="20" cy="20" r="9" stroke="#0D8070" strokeWidth="1.5" />
-      <line x1="20" y1="8" x2="20" y2="11" stroke="#0D8070" strokeWidth="2" strokeLinecap="round" />
-      <line x1="20" y1="29" x2="20" y2="32" stroke="#0D8070" strokeWidth="2" strokeLinecap="round" />
-      <line x1="8" y1="20" x2="11" y2="20" stroke="#0D8070" strokeWidth="2" strokeLinecap="round" />
-      <line x1="29" y1="20" x2="32" y2="20" stroke="#0D8070" strokeWidth="2" strokeLinecap="round" />
-      <line x1="11.5" y1="11.5" x2="13.5" y2="13.5" stroke="#0D8070" strokeWidth="2" strokeLinecap="round" />
-      <line x1="26.5" y1="26.5" x2="28.5" y2="28.5" stroke="#0D8070" strokeWidth="2" strokeLinecap="round" />
-      <line x1="28.5" y1="11.5" x2="26.5" y2="13.5" stroke="#0D8070" strokeWidth="2" strokeLinecap="round" />
-      <line x1="13.5" y1="26.5" x2="11.5" y2="28.5" stroke="#0D8070" strokeWidth="2" strokeLinecap="round" />
-      <path d="M17 18 Q20 14 23 18 Q20 22 17 18" fill="#E07A5F" opacity="0.9" />
-      <path d="M17 22 Q20 18 23 22 Q20 26 17 22" fill="#E07A5F" opacity="0.9" />
+      <circle cx="20" cy="20" r="9" stroke="#3B82F6" strokeWidth="1.5" />
+      <line x1="20" y1="8" x2="20" y2="11" stroke="#3B82F6" strokeWidth="2" strokeLinecap="round" />
+      <line x1="20" y1="29" x2="20" y2="32" stroke="#3B82F6" strokeWidth="2" strokeLinecap="round" />
+      <line x1="8" y1="20" x2="11" y2="20" stroke="#3B82F6" strokeWidth="2" strokeLinecap="round" />
+      <line x1="29" y1="20" x2="32" y2="20" stroke="#3B82F6" strokeWidth="2" strokeLinecap="round" />
+      <line x1="11.5" y1="11.5" x2="13.5" y2="13.5" stroke="#3B82F6" strokeWidth="2" strokeLinecap="round" />
+      <line x1="26.5" y1="26.5" x2="28.5" y2="28.5" stroke="#3B82F6" strokeWidth="2" strokeLinecap="round" />
+      <line x1="28.5" y1="11.5" x2="26.5" y2="13.5" stroke="#3B82F6" strokeWidth="2" strokeLinecap="round" />
+      <line x1="13.5" y1="26.5" x2="11.5" y2="28.5" stroke="#3B82F6" strokeWidth="2" strokeLinecap="round" />
+      <path d="M17 18 Q20 14 23 18 Q20 22 17 18" fill="#3B82F6" opacity="0.9" />
+      <path d="M17 22 Q20 18 23 22 Q20 26 17 22" fill="#3B82F6" opacity="0.9" />
     </svg>
   );
 }
@@ -76,7 +76,7 @@ function AnimatedChart({ visible }: { visible: boolean }) {
         <polyline
           points={points}
           fill="none"
-          stroke="#0D8070"
+          stroke="#3B82F6"
           strokeWidth="2.5"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -88,7 +88,7 @@ function AnimatedChart({ visible }: { visible: boolean }) {
         />
         {visible && (
           <g style={{ animation: "fade-in 0.5s ease-out 2s forwards", opacity: 0 }}>
-            <circle cx="270" cy="55" r="5" fill="#E07A5F" style={{ animation: "pulse-dot 2s ease-in-out infinite" }} />
+            <circle cx="270" cy="55" r="5" fill="#3B82F6" style={{ animation: "pulse-dot 2s ease-in-out infinite" }} />
             <rect x="222" y="33" width="96" height="18" rx="4" fill="#0B2340" opacity="0.9" />
             <text x="270" y="45" textAnchor="middle" fill="white" fontSize="8" fontWeight="500">Anomaly detected</text>
           </g>
@@ -132,7 +132,7 @@ export default function Home() {
             </Link>
             <Link
               href="/signup"
-              className="rounded-lg bg-[#E07A5F] px-5 py-2 text-sm font-semibold text-white transition hover:scale-105 hover:shadow-md"
+              className="rounded-lg bg-[#3B82F6] px-5 py-2 text-sm font-semibold text-white transition hover:scale-105 hover:shadow-md"
             >
               Get Started
             </Link>
@@ -149,13 +149,13 @@ export default function Home() {
               heroReveal.visible ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"
             }`}
           >
-            <span className="inline-flex items-center gap-2 rounded-full bg-[#E6F5F0] px-4 py-1.5 text-sm font-medium text-[#0D8070]">
+            <span className="inline-flex items-center gap-2 rounded-full bg-[#DCFCE7] px-4 py-1.5 text-sm font-medium text-[#3B82F6]">
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <circle cx="7" cy="7" r="3" stroke="#0D8070" strokeWidth="1.5" />
-                <line x1="7" y1="1" x2="7" y2="3" stroke="#0D8070" strokeWidth="1.5" strokeLinecap="round" />
-                <line x1="7" y1="11" x2="7" y2="13" stroke="#0D8070" strokeWidth="1.5" strokeLinecap="round" />
-                <line x1="1" y1="7" x2="3" y2="7" stroke="#0D8070" strokeWidth="1.5" strokeLinecap="round" />
-                <line x1="11" y1="7" x2="13" y2="7" stroke="#0D8070" strokeWidth="1.5" strokeLinecap="round" />
+                <circle cx="7" cy="7" r="3" stroke="#3B82F6" strokeWidth="1.5" />
+                <line x1="7" y1="1" x2="7" y2="3" stroke="#3B82F6" strokeWidth="1.5" strokeLinecap="round" />
+                <line x1="7" y1="11" x2="7" y2="13" stroke="#3B82F6" strokeWidth="1.5" strokeLinecap="round" />
+                <line x1="1" y1="7" x2="3" y2="7" stroke="#3B82F6" strokeWidth="1.5" strokeLinecap="round" />
+                <line x1="11" y1="7" x2="13" y2="7" stroke="#3B82F6" strokeWidth="1.5" strokeLinecap="round" />
               </svg>
               AI-Powered Predictive Maintenance
             </span>
@@ -173,13 +173,13 @@ export default function Home() {
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link
                 href="/signup"
-                className="rounded-lg bg-[#E07A5F] px-8 py-3.5 text-lg font-semibold text-white transition hover:scale-105 hover:shadow-lg"
+                className="rounded-lg bg-[#3B82F6] px-8 py-3.5 text-lg font-semibold text-white transition hover:scale-105 hover:shadow-lg"
               >
                 Start Free
               </Link>
               <a
                 href="#demo"
-                className="rounded-lg border-2 border-[#E8ECF1] px-8 py-3.5 text-lg text-[#1A2332] transition hover:border-[#0D8070]"
+                className="rounded-lg border-2 border-[#E8ECF1] px-8 py-3.5 text-lg text-[#1A2332] transition hover:border-[#3B82F6]"
               >
                 See it in action
               </a>
@@ -207,9 +207,9 @@ export default function Home() {
             >
               {/* Mock top bar */}
               <div className="flex items-center gap-2 border-b border-[#E8ECF1] bg-[#F5F6FA] px-4 py-2.5">
-                <span className="h-3 w-3 rounded-full bg-[#E07A5F]" />
+                <span className="h-3 w-3 rounded-full bg-[#3B82F6]" />
                 <span className="h-3 w-3 rounded-full bg-[#E8ECF1]" />
-                <span className="h-3 w-3 rounded-full bg-[#0D8070]" />
+                <span className="h-3 w-3 rounded-full bg-[#3B82F6]" />
                 <span className="ml-3 text-xs font-medium text-[#8C95A6]">PredictIQ Dashboard</span>
               </div>
 
@@ -217,15 +217,15 @@ export default function Home() {
                 {/* Stat cards */}
                 <div className="grid grid-cols-3 gap-3 sm:gap-4">
                   <div className="rounded-lg border border-[#E8ECF1] p-3 text-center sm:p-4">
-                    <p className="text-xl font-bold text-[#0D8070] sm:text-2xl">18</p>
+                    <p className="text-xl font-bold text-[#3B82F6] sm:text-2xl">18</p>
                     <p className="text-[10px] text-[#5A6578] sm:text-xs">Machines</p>
                   </div>
                   <div className="rounded-lg border border-[#E8ECF1] p-3 text-center sm:p-4">
-                    <p className="animate-pulse text-xl font-bold text-[#8B2252] sm:text-2xl">3</p>
+                    <p className="animate-pulse text-xl font-bold text-[#F53642] sm:text-2xl">3</p>
                     <p className="text-[10px] text-[#5A6578] sm:text-xs">Critical</p>
                   </div>
                   <div className="rounded-lg border border-[#E8ECF1] p-3 text-center sm:p-4">
-                    <p className="text-xl font-bold text-[#0D8070] sm:text-2xl">94.2%</p>
+                    <p className="text-xl font-bold text-[#3B82F6] sm:text-2xl">94.2%</p>
                     <p className="text-[10px] text-[#5A6578] sm:text-xs">Uptime</p>
                   </div>
                 </div>
@@ -239,15 +239,15 @@ export default function Home() {
                   }`}
                   style={{ transitionDelay: "2.5s" }}
                 >
-                  <div className="flex items-center gap-2 rounded-lg border border-[#F0E4E8] bg-[#F0E4E8]/50 px-3 py-2 text-xs">
-                    <span className="h-2 w-2 shrink-0 rounded-full bg-[#8B2252]" />
-                    <span className="text-[#6B1D3A]">
+                  <div className="flex items-center gap-2 rounded-lg border border-[#FEE2E2] bg-[#FEE2E2]/50 px-3 py-2 text-xs">
+                    <span className="h-2 w-2 shrink-0 rounded-full bg-[#F53642]" />
+                    <span className="text-[#991B1B]">
                       <span className="font-semibold">Critical:</span> Air Compressor #2 — Motor temperature exceeding threshold
                     </span>
                   </div>
-                  <div className="flex items-center gap-2 rounded-lg border border-[#FFF0EB] bg-[#FFF0EB]/50 px-3 py-2 text-xs">
-                    <span className="h-2 w-2 shrink-0 rounded-full bg-[#E07A5F]" />
-                    <span className="text-[#8B3A1F]">
+                  <div className="flex items-center gap-2 rounded-lg border border-[#FEF3C7] bg-[#FEF3C7]/50 px-3 py-2 text-xs">
+                    <span className="h-2 w-2 shrink-0 rounded-full bg-[#3B82F6]" />
+                    <span className="text-[#92400E]">
                       <span className="font-semibold">Warning:</span> Hydraulic Press #1 — Pressure fluctuation detected
                     </span>
                   </div>
@@ -267,13 +267,13 @@ export default function Home() {
               <p className="mt-2 text-sm text-[#5A6578]">average advance warning</p>
             </div>
             <div>
-              <p className="text-5xl font-bold text-[#0D8070]">
+              <p className="text-5xl font-bold text-[#3B82F6]">
                 <AnimatedNumber target={94.2} suffix="%" />
               </p>
               <p className="mt-2 text-sm text-[#5A6578]">equipment uptime</p>
             </div>
             <div>
-              <p className="text-5xl font-bold text-[#E07A5F]">
+              <p className="text-5xl font-bold text-[#3B82F6]">
                 <AnimatedNumber target={40} suffix="%" />
               </p>
               <p className="mt-2 text-sm text-[#5A6578]">reduction in downtime costs</p>
@@ -303,7 +303,7 @@ export default function Home() {
                   }`}
                   style={{ transitionDelay: `${i * 150}ms` }}
                 >
-                  <p className="text-4xl font-bold text-[#E07A5F]">{step.num}</p>
+                  <p className="text-4xl font-bold text-[#3B82F6]">{step.num}</p>
                   <h3 className="mt-3 text-lg font-semibold text-white">{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-[#8C95A6]">{step.desc}</p>
                 </div>
@@ -313,7 +313,7 @@ export default function Home() {
         </section>
 
         {/* ─── CTA ─── */}
-        <section className="bg-[#0D8070] px-6 py-16">
+        <section className="bg-[#3B82F6] px-6 py-16">
           <div
             ref={ctaReveal.ref}
             className={`mx-auto max-w-2xl text-center transition-all duration-700 ${
@@ -324,7 +324,7 @@ export default function Home() {
             <p className="mt-3 text-white/70">Join 170+ manufacturers who trust PredictIQ.</p>
             <Link
               href="/signup"
-              className="mt-8 inline-block rounded-lg bg-[#E07A5F] px-8 py-3.5 text-lg font-semibold text-white transition hover:scale-105 hover:shadow-lg"
+              className="mt-8 inline-block rounded-lg bg-[#3B82F6] px-8 py-3.5 text-lg font-semibold text-white transition hover:scale-105 hover:shadow-lg"
             >
               Get Started Free
             </Link>

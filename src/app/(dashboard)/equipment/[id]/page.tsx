@@ -115,7 +115,7 @@ export default async function EquipmentDetailPage({
       {/* Back button */}
       <Link
         href="/equipment"
-        className="inline-flex items-center gap-1.5 text-sm font-medium text-[#0D8070] hover:underline"
+        className="inline-flex items-center gap-1.5 text-sm font-medium text-[#3B82F6] hover:underline"
       >
         <ArrowLeft className="h-4 w-4" />
         Back to Equipment
@@ -136,7 +136,7 @@ export default async function EquipmentDetailPage({
             {canEdit && (
               <Link
                 href={`/work-orders/new?equipment=${id}`}
-                className="inline-flex items-center gap-2 rounded-lg bg-[#E07A5F] px-4 py-2 text-sm font-medium text-white transition hover:bg-[#C4654D]"
+                className="inline-flex items-center gap-2 rounded-lg bg-[#3B82F6] px-4 py-2 text-sm font-medium text-white transition hover:bg-[#2563EB]"
               >
                 <Plus className="h-4 w-4" />
                 Create Work Order
@@ -332,7 +332,7 @@ export default async function EquipmentDetailPage({
                       </div>
                       <Link
                         href={`/work-orders/new?equipment=${id}`}
-                        className="rounded-lg bg-[#E07A5F] px-3 py-1.5 text-xs font-medium text-white transition hover:bg-[#C4654D]"
+                        className="rounded-lg bg-[#3B82F6] px-3 py-1.5 text-xs font-medium text-white transition hover:bg-[#2563EB]"
                       >
                         Create Work Order
                       </Link>

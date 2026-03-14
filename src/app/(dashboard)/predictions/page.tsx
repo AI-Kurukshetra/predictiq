@@ -29,14 +29,15 @@ const severityVariant = (severity: string) => {
 };
 
 const daysColor = (days: number) => {
-  if (days <= 7) return "text-[#8B2252]";
-  if (days <= 14) return "text-[#0D8070]";
-  return "text-[#0D8070]";
+  if (days <= 7) return "text-[#F53642]";
+  if (days <= 14) return "text-[#F59E0B]";
+  return "text-[#2ADE6B]";
 };
 
 const confidenceColor = (confidence: number) => {
-  if (confidence > 80) return "bg-[#8B2252]";
-  if (confidence >= 60) return "bg-[#E07A5F]";
+  const pct = confidence > 1 ? confidence : confidence * 100;
+  if (pct > 80) return "bg-[#F53642]";
+  if (pct >= 60) return "bg-[#F59E0B]";
   return "bg-[#3B82F6]";
 };
 
@@ -66,8 +67,8 @@ export default async function PredictionsPage() {
       {/* Stats cards */}
       <section className="grid gap-4 md:grid-cols-4">
         <div className="flex items-center gap-4 rounded-xl border border-[#E8ECF1] bg-white p-5">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#E6F5F0]">
-            <BrainCircuit className="h-5 w-5 text-[#0D8070]" />
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#DCFCE7]">
+            <BrainCircuit className="h-5 w-5 text-[#3B82F6]" />
           </div>
           <div>
             <p className="text-sm text-[#5A6578]">Active Predictions</p>
@@ -75,8 +76,8 @@ export default async function PredictionsPage() {
           </div>
         </div>
         <div className="flex items-center gap-4 rounded-xl border border-[#E8ECF1] bg-white p-5">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#F0E4E8]">
-            <AlertTriangle className="h-5 w-5 text-[#8B2252]" />
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#FEE2E2]">
+            <AlertTriangle className="h-5 w-5 text-[#F53642]" />
           </div>
           <div>
             <p className="text-sm text-[#5A6578]">Critical / High</p>
@@ -86,8 +87,8 @@ export default async function PredictionsPage() {
           </div>
         </div>
         <div className="flex items-center gap-4 rounded-xl border border-[#E8ECF1] bg-white p-5">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#FFF0EB]">
-            <Target className="h-5 w-5 text-[#0D8070]" />
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#FEF3C7]">
+            <Target className="h-5 w-5 text-[#3B82F6]" />
           </div>
           <div>
             <p className="text-sm text-[#5A6578]">Avg Confidence</p>
@@ -97,8 +98,8 @@ export default async function PredictionsPage() {
           </div>
         </div>
         <div className="flex items-center gap-4 rounded-xl border border-[#E8ECF1] bg-white p-5">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#E6F5F0]">
-            <ShieldCheck className="h-5 w-5 text-[#0D8070]" />
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#DCFCE7]">
+            <ShieldCheck className="h-5 w-5 text-[#3B82F6]" />
           </div>
           <div>
             <p className="text-sm text-[#5A6578]">Prevented This Month</p>
@@ -110,8 +111,8 @@ export default async function PredictionsPage() {
       {/* Predictions list */}
       {predictions.length === 0 ? (
         <section className="flex min-h-[240px] flex-col items-center justify-center rounded-xl border border-[#E8ECF1] bg-white p-8 text-center">
-          <BrainCircuit className="h-8 w-8 text-[#0D8070]" />
-          <p className="mt-3 text-base font-medium text-[#0D8070]">
+          <BrainCircuit className="h-8 w-8 text-[#3B82F6]" />
+          <p className="mt-3 text-base font-medium text-[#3B82F6]">
             No active predictions — all equipment is running smoothly
           </p>
         </section>

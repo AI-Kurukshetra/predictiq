@@ -61,7 +61,7 @@ export function AnomalyExplainer({
         <button
           type="button"
           onClick={analyze}
-          className="inline-flex items-center gap-1.5 text-sm text-[#0D8070] hover:underline"
+          className="inline-flex items-center gap-1.5 text-sm text-[#3B82F6] hover:underline"
         >
           <Sparkles className="h-3.5 w-3.5" />
           Explain {anomalyCount} anomal{anomalyCount === 1 ? "y" : "ies"}
@@ -69,7 +69,7 @@ export function AnomalyExplainer({
       )}
 
       {visible && (
-        <div className="mt-2 rounded-xl border border-[#E07A5F]/30 bg-[#F5F6FA] p-4">
+        <div className="mt-2 rounded-xl border border-[#3B82F6]/30 bg-[#F5F6FA] p-4">
           {loading ? (
             <div className="space-y-2">
               <div className="h-4 w-3/4 animate-pulse rounded bg-[#E8ECF1]" />
@@ -78,8 +78,8 @@ export function AnomalyExplainer({
           ) : result ? (
             <div className="space-y-3">
               <div className="flex items-center gap-2">
-                <Sparkles className="h-4 w-4 text-[#E07A5F]" />
-                <span className="text-xs font-medium text-[#E07A5F]">AI Anomaly Analysis</span>
+                <Sparkles className="h-4 w-4 text-[#3B82F6]" />
+                <span className="text-xs font-medium text-[#3B82F6]">AI Anomaly Analysis</span>
               </div>
               <p className="text-sm font-semibold text-[#1A2332]">{result.summary}</p>
               <p className="text-xs text-[#5A6578]">Deviation: {result.deviation}</p>
@@ -104,7 +104,7 @@ export function AnomalyExplainer({
               </button>
             </div>
           ) : (
-            <p className="text-sm text-[#5A6578]">Unable to analyze. <button type="button" onClick={analyze} className="text-[#E07A5F] hover:underline">Retry</button></p>
+            <p className="text-sm text-[#5A6578]">Unable to analyze. <button type="button" onClick={analyze} className="text-[#3B82F6] hover:underline">Retry</button></p>
           )}
         </div>
       )}

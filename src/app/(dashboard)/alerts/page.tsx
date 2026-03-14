@@ -13,12 +13,12 @@ const severityBadge = (severity: string) => {
     case "major":
       return {
         variant: "warning" as const,
-        className: "bg-[#FFF0EB] text-[#8B3A1F]",
+        className: "bg-[#FEF3C7] text-[#92400E]",
       };
     case "minor":
       return {
         variant: "default" as const,
-        className: "bg-[#FFF0EB] text-[#8B3A1F]",
+        className: "bg-[#FEF3C7] text-[#92400E]",
       };
     case "info":
       return { variant: "info" as const, className: "" };
@@ -34,7 +34,7 @@ const statusBadge = (status: string) => {
     case "acknowledged":
       return {
         variant: "default" as const,
-        className: "bg-[#FFF0EB] text-[#8B3A1F]",
+        className: "bg-[#FEF3C7] text-[#92400E]",
       };
     case "resolved":
       return { variant: "healthy" as const, className: "" };
@@ -98,13 +98,13 @@ export default async function AlertsPage({
         <span className="rounded-full bg-[#F5F6FA] px-3 py-1 text-sm font-medium text-[#1A2332]">
           All: {stats.total}
         </span>
-        <span className="rounded-full bg-[#F0E4E8] px-3 py-1 text-sm font-medium text-[#6B1D3A]">
+        <span className="rounded-full bg-[#FEE2E2] px-3 py-1 text-sm font-medium text-[#991B1B]">
           Critical: {stats.bySeverity.critical}
         </span>
-        <span className="rounded-full bg-[#FFF0EB] px-3 py-1 text-sm font-medium text-[#8B3A1F]">
+        <span className="rounded-full bg-[#FEF3C7] px-3 py-1 text-sm font-medium text-[#92400E]">
           Major: {stats.bySeverity.major}
         </span>
-        <span className="rounded-full bg-[#FFF0EB] px-3 py-1 text-sm font-medium text-[#8B3A1F]">
+        <span className="rounded-full bg-[#FEF3C7] px-3 py-1 text-sm font-medium text-[#92400E]">
           Minor: {stats.bySeverity.minor}
         </span>
         <span className="rounded-full bg-[#DBEAFE] px-3 py-1 text-sm font-medium text-[#1E40AF]">
@@ -191,7 +191,7 @@ export default async function AlertsPage({
                     <td className="px-4 py-3">
                       <Link
                         href={`/equipment/${alert.equipment_id}`}
-                        className="font-medium text-[#0D8070] hover:underline"
+                        className="font-medium text-[#3B82F6] hover:underline"
                       >
                         {equipmentName ?? "Unknown"}
                       </Link>

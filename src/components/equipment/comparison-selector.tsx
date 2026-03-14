@@ -60,7 +60,7 @@ export function ComparisonSelector({
               e.target.value = "";
             }}
             disabled={selected.length >= 3}
-            className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#0D8070] disabled:opacity-50"
+            className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#3B82F6] disabled:opacity-50"
           >
             <option value="">Choose equipment...</option>
             {equipment
@@ -76,7 +76,7 @@ export function ComparisonSelector({
           type="button"
           onClick={compare}
           disabled={selected.length < 2}
-          className="rounded-lg bg-[#0D8070] px-6 py-2.5 text-sm font-medium text-white transition hover:bg-[#0A6B5E] disabled:opacity-50"
+          className="rounded-lg bg-[#3B82F6] px-6 py-2.5 text-sm font-medium text-white transition hover:bg-[#166534] disabled:opacity-50"
         >
           Compare
         </button>

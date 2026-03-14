@@ -56,7 +56,7 @@ export function EquipmentForm({
         <div className="grid gap-4 md:grid-cols-2">
           <div>
             <label htmlFor="name" className="mb-1 block text-sm font-medium text-[#1A2332]">
-              Name <span className="text-[#8B2252]">*</span>
+              Name <span className="text-[#F53642]">*</span>
             </label>
             <input
               type="text"
@@ -64,19 +64,19 @@ export function EquipmentForm({
               name="name"
               required
               defaultValue={equipment?.name ?? ""}
-              className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#0D8070]"
+              className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#3B82F6]"
             />
           </div>
           <div>
             <label htmlFor="type" className="mb-1 block text-sm font-medium text-[#1A2332]">
-              Type <span className="text-[#8B2252]">*</span>
+              Type <span className="text-[#F53642]">*</span>
             </label>
             <select
               id="type"
               name="type"
               required
               defaultValue={equipment?.type ?? ""}
-              className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#0D8070]"
+              className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#3B82F6]"
             >
               <option value="" disabled>Select type</option>
               {EQUIPMENT_TYPES.map((t) => (
@@ -89,14 +89,14 @@ export function EquipmentForm({
         <div className="grid gap-4 md:grid-cols-2">
           <div>
             <label htmlFor="facility_id" className="mb-1 block text-sm font-medium text-[#1A2332]">
-              Facility <span className="text-[#8B2252]">*</span>
+              Facility <span className="text-[#F53642]">*</span>
             </label>
             <select
               id="facility_id"
               name="facility_id"
               required
               defaultValue={equipment?.facility_id ?? ""}
-              className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#0D8070]"
+              className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#3B82F6]"
             >
               <option value="" disabled>Select facility</option>
               {facilities.map((f) => (
@@ -111,7 +111,7 @@ export function EquipmentForm({
               id="model"
               name="model"
               defaultValue={equipment?.model ?? ""}
-              className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#0D8070]"
+              className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#3B82F6]"
             />
           </div>
         </div>
@@ -124,7 +124,7 @@ export function EquipmentForm({
               id="serial_number"
               name="serial_number"
               defaultValue={equipment?.serial_number ?? ""}
-              className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#0D8070]"
+              className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#3B82F6]"
             />
           </div>
           <div>
@@ -133,7 +133,7 @@ export function EquipmentForm({
               id="location_zone"
               name="location_zone"
               defaultValue={equipment?.location_zone ?? ""}
-              className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#0D8070]"
+              className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#3B82F6]"
             >
               <option value="">Select zone</option>
               {ZONES.map((z) => (
@@ -150,7 +150,7 @@ export function EquipmentForm({
             id="install_date"
             name="install_date"
             defaultValue={equipment?.install_date?.slice(0, 10) ?? ""}
-            className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#0D8070]"
+            className="w-full rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] focus:outline-none focus:ring-2 focus:ring-[#3B82F6]"
           />
         </div>
 
@@ -163,7 +163,7 @@ export function EquipmentForm({
           </Link>
           <button
             type="submit"
-            className="rounded-lg bg-[#E07A5F] px-4 py-2.5 text-sm font-medium text-white transition hover:bg-[#C4654D]"
+            className="rounded-lg bg-[#3B82F6] px-4 py-2.5 text-sm font-medium text-white transition hover:bg-[#2563EB]"
           >
             {isEdit ? "Update Equipment" : "Add Equipment"}
           </button>

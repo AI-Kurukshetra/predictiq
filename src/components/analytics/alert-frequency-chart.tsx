@@ -29,8 +29,8 @@ export function AlertFrequencyChart({ data }: AlertFrequencyChartProps) {
         <Area
           type="monotone"
           dataKey="count"
-          stroke="#E07A5F"
-          fill="#E07A5F"
+          stroke="#3B82F6"
+          fill="#3B82F6"
           fillOpacity={0.2}
         />
       </AreaChart>

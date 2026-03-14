@@ -25,8 +25,8 @@ export function MonthlyCostChart({ data }: { data: MonthlyData[] }) {
         <YAxis tick={{ fontSize: 12, fill: "#5A6578" }} tickFormatter={(v) => `$${v}`} />
         <Tooltip formatter={(value) => `$${Number(value).toLocaleString()}`} />
         <Legend />
-        <Bar dataKey="preventive" stackId="cost" fill="#0D8070" name="Preventive" />
-        <Bar dataKey="corrective" stackId="cost" fill="#E07A5F" name="Corrective" />
+        <Bar dataKey="preventive" stackId="cost" fill="#2ADE6B" name="Preventive" />
+        <Bar dataKey="corrective" stackId="cost" fill="#F59E0B" name="Corrective" />
         <Bar dataKey="predictive" stackId="cost" fill="#3B82F6" name="Predictive" />
       </BarChart>
     </ResponsiveContainer>

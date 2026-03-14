@@ -8,10 +8,10 @@ interface CostEntry {
 }
 
 const TYPE_COLORS: Record<string, string> = {
-  preventive: "#0D8070",
-  corrective: "#E07A5F",
+  preventive: "#2ADE6B",
+  corrective: "#F59E0B",
   predictive: "#3B82F6",
-  emergency: "#8B2252",
+  emergency: "#F53642",
 };
 
 export function MaintenanceCostChart({ data }: { data: CostEntry[] }) {

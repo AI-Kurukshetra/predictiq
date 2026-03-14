@@ -26,7 +26,7 @@ export function TopProblematicChart({ data }: { data: TopEquipment[] }) {
           width={140}
         />
         <Tooltip />
-        <Bar dataKey="alertCount" fill="#E07A5F" radius={[0, 4, 4, 0]} />
+        <Bar dataKey="alertCount" fill="#3B82F6" radius={[0, 4, 4, 0]} />
       </BarChart>
     </ResponsiveContainer>
   );
