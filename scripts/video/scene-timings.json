@@ -1,0 +1,224 @@
+{
+  "total_duration_ms": 386220,
+  "total_duration_formatted": "6:26",
+  "voice": "en-US-JennyNeural",
+  "rate": "-5%",
+  "scenes": [
+    {
+      "id": "01_landing",
+      "audio_file": "scripts/video/audio\\01_landing.mp3",
+      "audio_duration_ms": 13560,
+      "scene_duration_ms": 14060,
+      "start_ms": 0,
+      "end_ms": 14060
+    },
+    {
+      "id": "02_landing_features",
+      "audio_file": "scripts/video/audio\\02_landing_features.mp3",
+      "audio_duration_ms": 15000,
+      "scene_duration_ms": 15500,
+      "start_ms": 14060,
+      "end_ms": 29560
+    },
+    {
+      "id": "03_admin_login",
+      "audio_file": "scripts/video/audio\\03_admin_login.mp3",
+      "audio_duration_ms": 10896,
+      "scene_duration_ms": 11396,
+      "start_ms": 29560,
+      "end_ms": 40956
+    },
+    {
+      "id": "04_admin_dashboard",
+      "audio_file": "scripts/video/audio\\04_admin_dashboard.mp3",
+      "audio_duration_ms": 16824,
+      "scene_duration_ms": 17324,
+      "start_ms": 40956,
+      "end_ms": 58280
+    },
+    {
+      "id": "05_admin_ai_summary",
+      "audio_file": "scripts/video/audio\\05_admin_ai_summary.mp3",
+      "audio_duration_ms": 15312,
+      "scene_duration_ms": 15812,
+      "start_ms": 58280,
+      "end_ms": 74092
+    },
+    {
+      "id": "06_admin_users",
+      "audio_file": "scripts/video/audio\\06_admin_users.mp3",
+      "audio_duration_ms": 14424,
+      "scene_duration_ms": 14924,
+      "start_ms": 74092,
+      "end_ms": 89016
+    },
+    {
+      "id": "07_admin_audit",
+      "audio_file": "scripts/video/audio\\07_admin_audit.mp3",
+      "audio_duration_ms": 13248,
+      "scene_duration_ms": 13748,
+      "start_ms": 89016,
+      "end_ms": 102764
+    },
+    {
+      "id": "08_admin_ai_chat",
+      "audio_file": "scripts/video/audio\\08_admin_ai_chat.mp3",
+      "audio_duration_ms": 11496,
+      "scene_duration_ms": 11996,
+      "start_ms": 102764,
+      "end_ms": 114760
+    },
+    {
+      "id": "09_admin_ai_response",
+      "audio_file": "scripts/video/audio\\09_admin_ai_response.mp3",
+      "audio_duration_ms": 15912,
+      "scene_duration_ms": 16412,
+      "start_ms": 114760,
+      "end_ms": 131172
+    },
+    {
+      "id": "10_switch_manager",
+      "audio_file": "scripts/video/audio\\10_switch_manager.mp3",
+      "audio_duration_ms": 8664,
+      "scene_duration_ms": 9164,
+      "start_ms": 131172,
+      "end_ms": 140336
+    },
+    {
+      "id": "11_manager_login",
+      "audio_file": "scripts/video/audio\\11_manager_login.mp3",
+      "audio_duration_ms": 8904,
+      "scene_duration_ms": 9404,
+      "start_ms": 140336,
+      "end_ms": 149740
+    },
+    {
+      "id": "12_manager_equipment",
+      "audio_file": "scripts/video/audio\\12_manager_equipment.mp3",
+      "audio_duration_ms": 13080,
+      "scene_duration_ms": 13580,
+      "start_ms": 149740,
+      "end_ms": 163320
+    },
+    {
+      "id": "13_equipment_detail",
+      "audio_file": "scripts/video/audio\\13_equipment_detail.mp3",
+      "audio_duration_ms": 14640,
+      "scene_duration_ms": 15140,
+      "start_ms": 163320,
+      "end_ms": 178460
+    },
+    {
+      "id": "14_equipment_ai_anomaly",
+      "audio_file": "scripts/video/audio\\14_equipment_ai_anomaly.mp3",
+      "audio_duration_ms": 12864,
+      "scene_duration_ms": 13364,
+      "start_ms": 178460,
+      "end_ms": 191824
+    },
+    {
+      "id": "15_alerts",
+      "audio_file": "scripts/video/audio\\15_alerts.mp3",
+      "audio_duration_ms": 15984,
+      "scene_duration_ms": 16484,
+      "start_ms": 191824,
+      "end_ms": 208308
+    },
+    {
+      "id": "16_predictions",
+      "audio_file": "scripts/video/audio\\16_predictions.mp3",
+      "audio_duration_ms": 16224,
+      "scene_duration_ms": 16724,
+      "start_ms": 208308,
+      "end_ms": 225032
+    },
+    {
+      "id": "17_ai_root_cause",
+      "audio_file": "scripts/video/audio\\17_ai_root_cause.mp3",
+      "audio_duration_ms": 16248,
+      "scene_duration_ms": 16748,
+      "start_ms": 225032,
+      "end_ms": 241780
+    },
+    {
+      "id": "18_work_orders",
+      "audio_file": "scripts/video/audio\\18_work_orders.mp3",
+      "audio_duration_ms": 11880,
+      "scene_duration_ms": 12380,
+      "start_ms": 241780,
+      "end_ms": 254160
+    },
+    {
+      "id": "19_analytics",
+      "audio_file": "scripts/video/audio\\19_analytics.mp3",
+      "audio_duration_ms": 15384,
+      "scene_duration_ms": 15884,
+      "start_ms": 254160,
+      "end_ms": 270044
+    },
+    {
+      "id": "20_ai_maintenance_plan",
+      "audio_file": "scripts/video/audio\\20_ai_maintenance_plan.mp3",
+      "audio_duration_ms": 13176,
+      "scene_duration_ms": 13676,
+      "start_ms": 270044,
+      "end_ms": 283720
+    },
+    {
+      "id": "21_switch_tech",
+      "audio_file": "scripts/video/audio\\21_switch_tech.mp3",
+      "audio_duration_ms": 7560,
+      "scene_duration_ms": 8060,
+      "start_ms": 283720,
+      "end_ms": 291780
+    },
+    {
+      "id": "22_tech_login",
+      "audio_file": "scripts/video/audio\\22_tech_login.mp3",
+      "audio_duration_ms": 8304,
+      "scene_duration_ms": 8804,
+      "start_ms": 291780,
+      "end_ms": 300584
+    },
+    {
+      "id": "23_tech_dashboard",
+      "audio_file": "scripts/video/audio\\23_tech_dashboard.mp3",
+      "audio_duration_ms": 17856,
+      "scene_duration_ms": 18356,
+      "start_ms": 300584,
+      "end_ms": 318940
+    },
+    {
+      "id": "24_tech_equipment",
+      "audio_file": "scripts/video/audio\\24_tech_equipment.mp3",
+      "audio_duration_ms": 12504,
+      "scene_duration_ms": 13004,
+      "start_ms": 318940,
+      "end_ms": 331944
+    },
+    {
+      "id": "25_tech_workorders",
+      "audio_file": "scripts/video/audio\\25_tech_workorders.mp3",
+      "audio_duration_ms": 13656,
+      "scene_duration_ms": 14156,
+      "start_ms": 331944,
+      "end_ms": 346100
+    },
+    {
+      "id": "26_tech_alerts",
+      "audio_file": "scripts/video/audio\\26_tech_alerts.mp3",
+      "audio_duration_ms": 14328,
+      "scene_duration_ms": 14828,
+      "start_ms": 346100,
+      "end_ms": 360928
+    },
+    {
+      "id": "27_closing",
+      "audio_file": "scripts/video/audio\\27_closing.mp3",
+      "audio_duration_ms": 24792,
+      "scene_duration_ms": 25292,
+      "start_ms": 360928,
+      "end_ms": 386220
+    }
+  ]
+}

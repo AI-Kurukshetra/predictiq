@@ -1,0 +1,335 @@
+[
+  {
+    "id": "01_landing",
+    "title": "Landing Page Hero",
+    "narration": "Welcome to PredictIQ — where artificial intelligence meets industrial maintenance. Our platform predicts equipment failures before they happen, saving manufacturers millions in unplanned downtime.",
+    "actions": [
+      { "type": "goto", "url": "http://localhost:3000" },
+      { "type": "wait", "ms": 1000 },
+      { "type": "scroll", "y": 300, "speed": "smooth" }
+    ],
+    "transition": "scroll"
+  },
+  {
+    "id": "02_landing_features",
+    "title": "Landing Page — AI Highlight",
+    "narration": "Powered by machine learning, PredictIQ analyzes sensor data twenty-four seven, detects anomalies in real time, and predicts failures up to twelve days in advance. Let's see it in action — starting with the Administrator.",
+    "actions": [
+      { "type": "scroll", "y": 700, "speed": "smooth" },
+      { "type": "wait", "ms": 2000 },
+      { "type": "scroll", "y": 1200, "speed": "smooth" }
+    ],
+    "transition": "scroll"
+  },
+  {
+    "id": "03_admin_login",
+    "title": "Admin Login",
+    "narration": "The Administrator has the most powerful access — full control over users, system configuration, and complete audit trails. Let's log in.",
+    "actions": [
+      { "type": "goto", "url": "http://localhost:3000/login" },
+      { "type": "wait", "ms": 800 },
+      { "type": "fill", "selector": "input[type='email']", "value": "admin@predictiq.demo", "typeSpeed": 50 },
+      { "type": "fill", "selector": "input[type='password']", "value": "demo1234", "typeSpeed": 50 },
+      { "type": "click", "selector": "button[type='submit']" },
+      { "type": "waitForNavigation" }
+    ],
+    "transition": "navigate"
+  },
+  {
+    "id": "04_admin_dashboard",
+    "title": "Admin Dashboard Overview",
+    "narration": "The admin dashboard shows the full picture — eighteen equipment monitored, three critical alerts, eight A.I. predictions active, and fourteen open work orders. Notice the A.I.-generated summary at the top — it instantly highlights what needs attention.",
+    "actions": [
+      { "type": "wait", "ms": 1500 },
+      { "type": "highlight", "selector": "[data-stat='equipment']", "ms": 1000 },
+      { "type": "highlight", "selector": "[data-stat='alerts']", "ms": 1000 },
+      { "type": "highlight", "selector": "[data-stat='predictions']", "ms": 1000 },
+      { "type": "scroll", "y": 200, "speed": "smooth" }
+    ],
+    "transition": "none"
+  },
+  {
+    "id": "05_admin_ai_summary",
+    "title": "AI Summary — Hero Moment 1",
+    "narration": "This A.I. summary is generated in real time. It analyzes all equipment data and tells the admin exactly what's happening — which machines are critical and which need immediate inspection. No manual analysis needed.",
+    "actions": [
+      { "type": "highlight", "selector": "[data-ai-summary]", "ms": 3000 },
+      { "type": "wait", "ms": 2000 }
+    ],
+    "transition": "none"
+  },
+  {
+    "id": "06_admin_users",
+    "title": "User Management",
+    "narration": "Admins manage the entire team from the Users page. They can add new team members, assign roles — Manager, Technician, or Administrator — and control exactly what each person can access.",
+    "actions": [
+      { "type": "click", "selector": "a[href='/users']" },
+      { "type": "waitForNavigation" },
+      { "type": "wait", "ms": 2000 },
+      { "type": "scroll", "y": 200, "speed": "smooth" },
+      { "type": "wait", "ms": 2000 }
+    ],
+    "transition": "navigate"
+  },
+  {
+    "id": "07_admin_audit",
+    "title": "Audit Log",
+    "narration": "The audit log tracks every action in the system — who logged in, when alerts were acknowledged, and what changes were made. Essential for compliance and accountability in industrial environments.",
+    "actions": [
+      { "type": "click", "selector": "a[href='/audit']" },
+      { "type": "waitForNavigation" },
+      { "type": "wait", "ms": 2000 },
+      { "type": "scroll", "y": 200, "speed": "smooth" },
+      { "type": "wait", "ms": 2000 }
+    ],
+    "transition": "navigate"
+  },
+  {
+    "id": "08_admin_ai_chat",
+    "title": "AI Chat — Hero Moment 2",
+    "narration": "Before switching roles, let's try the A.I. chat assistant. It's available on every page. Watch — we'll ask it which equipment needs urgent attention.",
+    "actions": [
+      { "type": "click", "selector": "[data-ai-chat-trigger]" },
+      { "type": "wait", "ms": 1000 },
+      { "type": "fill", "selector": "[data-ai-chat-input]", "value": "Which equipment needs urgent attention right now?", "typeSpeed": 35 },
+      { "type": "click", "selector": "[data-ai-chat-send]" },
+      { "type": "wait", "ms": 5000 }
+    ],
+    "transition": "click"
+  },
+  {
+    "id": "09_admin_ai_response",
+    "title": "AI Chat Response — Hero Moment 3",
+    "narration": "The A.I. instantly pulls real equipment data and gives actionable recommendations. It knows which machines are critical, suggests immediate inspection, and ranks equipment by urgency. This is the power of A.I.-driven maintenance.",
+    "actions": [
+      { "type": "wait", "ms": 4000 },
+      { "type": "click", "selector": "[data-ai-chat-close]" }
+    ],
+    "transition": "none"
+  },
+  {
+    "id": "10_switch_manager",
+    "title": "Switch to Manager",
+    "narration": "Now let's switch to the Manager role — the day-to-day operations view with full equipment access, predictions, and analytics.",
+    "actions": [
+      { "type": "click", "selector": "[data-logout]" },
+      { "type": "waitForNavigation" },
+      { "type": "wait", "ms": 500 }
+    ],
+    "transition": "navigate"
+  },
+  {
+    "id": "11_manager_login",
+    "title": "Manager Login",
+    "narration": "Managers see everything except user management and audit logs. Their focus is on equipment health and maintenance decisions.",
+    "actions": [
+      { "type": "fill", "selector": "input[type='email']", "value": "manager@predictiq.demo", "typeSpeed": 50 },
+      { "type": "fill", "selector": "input[type='password']", "value": "demo1234", "typeSpeed": 50 },
+      { "type": "click", "selector": "button[type='submit']" },
+      { "type": "waitForNavigation" }
+    ],
+    "transition": "navigate"
+  },
+  {
+    "id": "12_manager_equipment",
+    "title": "Equipment List",
+    "narration": "The equipment page shows all monitored machines with health scores, status badges, and maintenance history. Green means healthy, amber is warning, red is critical — instant visual clarity.",
+    "actions": [
+      { "type": "click", "selector": "a[href='/equipment']" },
+      { "type": "waitForNavigation" },
+      { "type": "wait", "ms": 2000 },
+      { "type": "scroll", "y": 200, "speed": "smooth" },
+      { "type": "wait", "ms": 2000 }
+    ],
+    "transition": "navigate"
+  },
+  {
+    "id": "13_equipment_detail",
+    "title": "Equipment Detail — Sensor Charts",
+    "narration": "Clicking into a machine shows detailed sensor data — vibration, temperature, pressure — all with real-time charts. The A.I. automatically flags anomalies with red dots when readings cross threshold lines.",
+    "actions": [
+      { "type": "click", "selector": "[data-equipment-card]" },
+      { "type": "waitForNavigation" },
+      { "type": "wait", "ms": 2000 },
+      { "type": "scroll", "y": 300, "speed": "smooth" },
+      { "type": "wait", "ms": 2000 }
+    ],
+    "transition": "navigate"
+  },
+  {
+    "id": "14_equipment_ai_anomaly",
+    "title": "AI Anomaly Explainer — Hero Moment 4",
+    "narration": "Here's where A.I. shines again. The anomaly explainer analyzes unusual sensor patterns. It doesn't just show you the spike — it tells you why it happened and what to do about it.",
+    "actions": [
+      { "type": "scroll", "y": 400, "speed": "smooth" },
+      { "type": "wait", "ms": 1000 },
+      { "type": "click", "selector": "button:has-text('Explain')" },
+      { "type": "wait", "ms": 5000 },
+      { "type": "scroll", "y": 600, "speed": "smooth" }
+    ],
+    "transition": "scroll"
+  },
+  {
+    "id": "15_alerts",
+    "title": "Alerts Page",
+    "narration": "The alerts page consolidates every equipment warning. Critical alerts appear first. Each row shows severity, equipment name, a clear message, and status. Managers acknowledge and resolve alerts directly from here.",
+    "actions": [
+      { "type": "click", "selector": "a[href='/alerts']" },
+      { "type": "waitForNavigation" },
+      { "type": "wait", "ms": 2000 },
+      { "type": "scroll", "y": 200, "speed": "smooth" },
+      { "type": "wait", "ms": 2000 }
+    ],
+    "transition": "navigate"
+  },
+  {
+    "id": "16_predictions",
+    "title": "AI Predictions — Hero Moment 5",
+    "narration": "This is PredictIQ's flagship feature — A.I. failure predictions. Machine learning models analyze sensor patterns and forecast potential breakdowns days in advance. That's the power of predictive, not reactive, maintenance.",
+    "actions": [
+      { "type": "click", "selector": "a[href='/predictions']" },
+      { "type": "waitForNavigation" },
+      { "type": "wait", "ms": 2000 },
+      { "type": "scroll", "y": 200, "speed": "smooth" },
+      { "type": "wait", "ms": 2000 }
+    ],
+    "transition": "navigate"
+  },
+  {
+    "id": "17_ai_root_cause",
+    "title": "AI Root Cause Analysis — Hero Moment 6",
+    "narration": "From any prediction, the A.I. root cause analysis explains exactly why a failure is predicted. It lists contributing factors and suggests specific actions. Managers can instantly create a work order from this analysis.",
+    "actions": [
+      { "type": "scroll", "y": 300, "speed": "smooth" },
+      { "type": "wait", "ms": 500 },
+      { "type": "click", "selector": "button:has-text('AI Root Cause')" },
+      { "type": "wait", "ms": 6000 },
+      { "type": "scroll", "y": 600, "speed": "smooth" },
+      { "type": "wait", "ms": 2000 }
+    ],
+    "transition": "scroll"
+  },
+  {
+    "id": "18_work_orders",
+    "title": "Work Orders",
+    "narration": "Work orders flow directly from A.I. predictions to your maintenance team. Each order has priority, an assigned technician, a due date, and tracks status from open to completion.",
+    "actions": [
+      { "type": "click", "selector": "a[href='/work-orders']" },
+      { "type": "waitForNavigation" },
+      { "type": "wait", "ms": 2000 },
+      { "type": "scroll", "y": 200, "speed": "smooth" },
+      { "type": "wait", "ms": 2000 }
+    ],
+    "transition": "navigate"
+  },
+  {
+    "id": "19_analytics",
+    "title": "Analytics Dashboard",
+    "narration": "Analytics show the big picture — equipment health trends, alert frequency, prediction accuracy, and the most important metric: return on investment. PredictIQ tracks exactly how much downtime and cost you've avoided.",
+    "actions": [
+      { "type": "click", "selector": "a[href='/analytics']" },
+      { "type": "waitForNavigation" },
+      { "type": "wait", "ms": 2000 },
+      { "type": "scroll", "y": 400, "speed": "smooth" },
+      { "type": "wait", "ms": 2000 }
+    ],
+    "transition": "navigate"
+  },
+  {
+    "id": "20_ai_maintenance_plan",
+    "title": "AI Maintenance Plan — Hero Moment 7",
+    "narration": "The A.I. maintenance advisor generates optimized maintenance schedules based on all equipment data. It recommends which machines to service first, estimates costs, and prioritizes by risk level.",
+    "actions": [
+      { "type": "click", "selector": "a[href='/dashboard']" },
+      { "type": "waitForNavigation" },
+      { "type": "scroll", "y": 800, "speed": "smooth" },
+      { "type": "wait", "ms": 1000 },
+      { "type": "click", "selector": "button:has-text('Generate Plan')" },
+      { "type": "wait", "ms": 6000 },
+      { "type": "scroll", "y": 1200, "speed": "smooth" }
+    ],
+    "transition": "scroll"
+  },
+  {
+    "id": "21_switch_tech",
+    "title": "Switch to Technician",
+    "narration": "Finally, the Technician view — a streamlined interface designed for the people who actually fix the machines.",
+    "actions": [
+      { "type": "click", "selector": "[data-logout]" },
+      { "type": "waitForNavigation" },
+      { "type": "wait", "ms": 500 }
+    ],
+    "transition": "navigate"
+  },
+  {
+    "id": "22_tech_login",
+    "title": "Technician Login",
+    "narration": "Technicians log in and immediately see only what's relevant to them — no information overload, just actionable tasks.",
+    "actions": [
+      { "type": "fill", "selector": "input[type='email']", "value": "tech@predictiq.demo", "typeSpeed": 50 },
+      { "type": "fill", "selector": "input[type='password']", "value": "demo1234", "typeSpeed": 50 },
+      { "type": "click", "selector": "button[type='submit']" },
+      { "type": "waitForNavigation" }
+    ],
+    "transition": "navigate"
+  },
+  {
+    "id": "23_tech_dashboard",
+    "title": "Technician Dashboard — Focused View",
+    "narration": "The technician dashboard is clean and focused. They see their assigned work orders, active alerts, and quick status cards. Notice the sidebar — no predictions, no analytics, no user management. Role-based access keeps it simple.",
+    "actions": [
+      { "type": "wait", "ms": 2000 },
+      { "type": "highlight", "selector": "[data-sidebar]", "ms": 2000 },
+      { "type": "scroll", "y": 200, "speed": "smooth" },
+      { "type": "wait", "ms": 1500 }
+    ],
+    "transition": "none"
+  },
+  {
+    "id": "24_tech_equipment",
+    "title": "Technician Equipment View",
+    "narration": "Technicians can view equipment details and sensor data, but they can't modify configurations or dismiss predictions. They focus on what they do best — maintaining the machines.",
+    "actions": [
+      { "type": "click", "selector": "a[href='/equipment']" },
+      { "type": "waitForNavigation" },
+      { "type": "wait", "ms": 2000 },
+      { "type": "scroll", "y": 200, "speed": "smooth" }
+    ],
+    "transition": "navigate"
+  },
+  {
+    "id": "25_tech_workorders",
+    "title": "Technician Work Orders",
+    "narration": "Their work orders page shows assigned tasks with priorities and due dates. They can update status as they complete work. The A.I.-generated recommendations flow directly into these work orders.",
+    "actions": [
+      { "type": "click", "selector": "a[href='/work-orders']" },
+      { "type": "waitForNavigation" },
+      { "type": "wait", "ms": 3000 },
+      { "type": "scroll", "y": 200, "speed": "smooth" }
+    ],
+    "transition": "navigate"
+  },
+  {
+    "id": "26_tech_alerts",
+    "title": "Technician Alerts",
+    "narration": "Technicians see alerts relevant to their equipment. They can acknowledge alerts to show they're working on the issue. The entire workflow — from A.I. prediction to work order to resolution — is seamless.",
+    "actions": [
+      { "type": "click", "selector": "a[href='/alerts']" },
+      { "type": "waitForNavigation" },
+      { "type": "wait", "ms": 3000 }
+    ],
+    "transition": "navigate"
+  },
+  {
+    "id": "27_closing",
+    "title": "Closing — Back to Landing",
+    "narration": "That's PredictIQ. Seven A.I. features working together — real-time summaries, failure predictions, root cause analysis, anomaly detection, maintenance planning, intelligent chat, and automated work order generation. Prevent failures. Reduce downtime. Save costs. Try PredictIQ free today.",
+    "actions": [
+      { "type": "click", "selector": "[data-logout]" },
+      { "type": "waitForNavigation" },
+      { "type": "goto", "url": "http://localhost:3000" },
+      { "type": "wait", "ms": 6000 }
+    ],
+    "transition": "navigate"
+  }
+]

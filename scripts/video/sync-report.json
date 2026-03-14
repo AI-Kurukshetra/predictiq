@@ -1,0 +1,164 @@
+[
+  {
+    "id": "01_landing",
+    "expected_ms": 14060,
+    "actual_ms": 14062,
+    "drift_ms": 2
+  },
+  {
+    "id": "02_landing_features",
+    "expected_ms": 15500,
+    "actual_ms": 15504,
+    "drift_ms": 4
+  },
+  {
+    "id": "03_admin_login",
+    "expected_ms": 11396,
+    "actual_ms": 11410,
+    "drift_ms": 14
+  },
+  {
+    "id": "04_admin_dashboard",
+    "expected_ms": 17324,
+    "actual_ms": 17330,
+    "drift_ms": 6
+  },
+  {
+    "id": "05_admin_ai_summary",
+    "expected_ms": 15812,
+    "actual_ms": 15818,
+    "drift_ms": 6
+  },
+  {
+    "id": "06_admin_users",
+    "expected_ms": 14924,
+    "actual_ms": 14930,
+    "drift_ms": 6
+  },
+  {
+    "id": "07_admin_audit",
+    "expected_ms": 13748,
+    "actual_ms": 13750,
+    "drift_ms": 2
+  },
+  {
+    "id": "08_admin_ai_chat",
+    "expected_ms": 11996,
+    "actual_ms": 11997,
+    "drift_ms": 1
+  },
+  {
+    "id": "09_admin_ai_response",
+    "expected_ms": 16412,
+    "actual_ms": 16414,
+    "drift_ms": 2
+  },
+  {
+    "id": "10_switch_manager",
+    "expected_ms": 9164,
+    "actual_ms": 9173,
+    "drift_ms": 9
+  },
+  {
+    "id": "11_manager_login",
+    "expected_ms": 9404,
+    "actual_ms": 9417,
+    "drift_ms": 13
+  },
+  {
+    "id": "12_manager_equipment",
+    "expected_ms": 13580,
+    "actual_ms": 13583,
+    "drift_ms": 3
+  },
+  {
+    "id": "13_equipment_detail",
+    "expected_ms": 15140,
+    "actual_ms": 15142,
+    "drift_ms": 2
+  },
+  {
+    "id": "14_equipment_ai_anomaly",
+    "expected_ms": 13364,
+    "actual_ms": 13375,
+    "drift_ms": 11
+  },
+  {
+    "id": "15_alerts",
+    "expected_ms": 16484,
+    "actual_ms": 16496,
+    "drift_ms": 12
+  },
+  {
+    "id": "16_predictions",
+    "expected_ms": 16724,
+    "actual_ms": 16737,
+    "drift_ms": 13
+  },
+  {
+    "id": "17_ai_root_cause",
+    "expected_ms": 16748,
+    "actual_ms": 16759,
+    "drift_ms": 11
+  },
+  {
+    "id": "18_work_orders",
+    "expected_ms": 12380,
+    "actual_ms": 12385,
+    "drift_ms": 5
+  },
+  {
+    "id": "19_analytics",
+    "expected_ms": 15884,
+    "actual_ms": 15888,
+    "drift_ms": 4
+  },
+  {
+    "id": "20_ai_maintenance_plan",
+    "expected_ms": 13676,
+    "actual_ms": 13683,
+    "drift_ms": 7
+  },
+  {
+    "id": "21_switch_tech",
+    "expected_ms": 8060,
+    "actual_ms": 8063,
+    "drift_ms": 3
+  },
+  {
+    "id": "22_tech_login",
+    "expected_ms": 8804,
+    "actual_ms": 8806,
+    "drift_ms": 2
+  },
+  {
+    "id": "23_tech_dashboard",
+    "expected_ms": 18356,
+    "actual_ms": 18367,
+    "drift_ms": 11
+  },
+  {
+    "id": "24_tech_equipment",
+    "expected_ms": 13004,
+    "actual_ms": 13005,
+    "drift_ms": 1
+  },
+  {
+    "id": "25_tech_workorders",
+    "expected_ms": 14156,
+    "actual_ms": 14162,
+    "drift_ms": 6
+  },
+  {
+    "id": "26_tech_alerts",
+    "expected_ms": 14828,
+    "actual_ms": 14838,
+    "drift_ms": 10
+  },
+  {
+    "id": "27_closing",
+    "expected_ms": 25292,
+    "actual_ms": 25300,
+    "drift_ms": 8
+  }
+]
