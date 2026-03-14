@@ -95,7 +95,7 @@ export function AiChat({
             <Sparkles className="h-5 w-5 text-[#E07A5F]" />
             <div>
               <h3 className="text-sm font-semibold text-[#1A2332]">PredictIQ AI</h3>
-              <p className="text-[10px] text-[#8C95A6]">Powered by Gemini</p>
+              <p className="text-[10px] text-[#8C95A6]">Powered by AI</p>
             </div>
           </div>
           <button type="button" onClick={onClose} className="rounded p-1 hover:bg-[#F5F6FA]">

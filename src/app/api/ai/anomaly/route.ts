@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
-import { askGeminiJSON } from "@/lib/ai/gemini";
+import { askGeminiJSON } from "@/lib/ai/llm";
 import { ANOMALY_EXPLAINER_PROMPT } from "@/lib/ai/prompts";
 
 export async function POST(request: NextRequest) {

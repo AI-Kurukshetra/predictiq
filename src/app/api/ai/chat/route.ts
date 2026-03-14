@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
-import { askGeminiWithContext } from "@/lib/ai/gemini";
+import { askGeminiWithContext } from "@/lib/ai/llm";
 import { EQUIPMENT_ANALYST_PROMPT } from "@/lib/ai/prompts";
 import { buildEquipmentContext, buildDashboardContext } from "@/lib/ai/context-builders";
 

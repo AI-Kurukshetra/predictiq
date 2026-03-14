@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
-import { askGeminiJSON } from "@/lib/ai/gemini";
+import { askGeminiJSON } from "@/lib/ai/llm";
 import { ROOT_CAUSE_PROMPT } from "@/lib/ai/prompts";
 import { buildSensorTrendSummary } from "@/lib/ai/context-builders";
 

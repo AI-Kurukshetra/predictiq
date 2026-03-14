@@ -1,62 +1,51 @@
-import { GoogleGenerativeAI, GenerativeModel } from "@google/generative-ai";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
-let cachedModel: GenerativeModel | null = null;
 let lastRequestTime = 0;
+const MIN_INTERVAL = 4000; // 4s between requests (free tier: 15 RPM)
 
 async function rateLimitWait() {
   const now = Date.now();
   const elapsed = now - lastRequestTime;
-  if (elapsed < 2000) {
-    await new Promise((resolve) => setTimeout(resolve, 2000 - elapsed));
+  if (elapsed < MIN_INTERVAL) {
+    await new Promise((resolve) => setTimeout(resolve, MIN_INTERVAL - elapsed));
   }
   lastRequestTime = Date.now();
 }
 
-async function getModel(): Promise<GenerativeModel> {
-  if (cachedModel) return cachedModel;
-
+async function callGemini(prompt: string, retries = 2): Promise<string> {
   const key = process.env.GEMINI_API_KEY;
-  if (!key) throw new Error("GEMINI_API_KEY not configured");
+  if (!key) return "AI features unavailable — API key not configured.";
 
   const genAI = new GoogleGenerativeAI(key);
-  const modelNames = ["gemini-2.0-flash", "gemini-1.5-flash", "gemini-1.5-pro", "gemini-pro"];
+  const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
-  for (const name of modelNames) {
+  for (let attempt = 0; attempt <= retries; attempt++) {
     try {
-      const model = genAI.getGenerativeModel({ model: name });
-      await model.generateContent("test");
-      console.log("Using Gemini model:", name);
-      cachedModel = model;
-      return model;
-    } catch {
-      console.log("Model", name, "failed, trying next...");
+      await rateLimitWait();
+      const result = await model.generateContent(prompt);
+      return result.response.text();
+    } catch (error: unknown) {
+      const err = error as { status?: number; message?: string };
+      if (err.status === 429 && attempt < retries) {
+        const wait = (attempt + 1) * 5000;
+        console.log(`Gemini 429 rate limited, waiting ${wait / 1000}s (attempt ${attempt + 1}/${retries})`);
+        await new Promise((resolve) => setTimeout(resolve, wait));
+        continue;
+      }
+      console.error("Gemini error:", err.message ?? error, "status:", err.status);
+      return "Unable to generate AI response. Please try again.";
     }
   }
-  throw new Error("No Gemini model available");
+  return "Unable to generate AI response. Please try again.";
 }
 
 export async function askGemini(prompt: string): Promise<string> {
-  if (!process.env.GEMINI_API_KEY) {
-    console.warn("GEMINI_API_KEY not configured");
-    return "AI features unavailable — API key not configured.";
-  }
-  try {
-    await rateLimitWait();
-    const model = await getModel();
-    const result = await model.generateContent(prompt);
-    return result.response.text();
-  } catch (error: unknown) {
-    const err = error as { message?: string; status?: number; errorDetails?: unknown };
-    console.error("Gemini error:", err.message ?? error);
-    console.error("Gemini error status:", err.status);
-    if (err.errorDetails) console.error("Gemini details:", JSON.stringify(err.errorDetails));
-    return "Unable to generate AI response. Please try again.";
-  }
+  return callGemini(prompt);
 }
 
 export async function askGeminiJSON<T>(prompt: string): Promise<T | null> {
   const fullPrompt = prompt + "\n\nRespond ONLY in valid JSON. No markdown backticks, no explanation outside the JSON.";
-  const text = await askGemini(fullPrompt);
+  const text = await callGemini(fullPrompt);
   if (text.startsWith("AI features unavailable") || text.startsWith("Unable to generate")) {
     return null;
   }
@@ -64,7 +53,7 @@ export async function askGeminiJSON<T>(prompt: string): Promise<T | null> {
     const cleaned = text.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
     return JSON.parse(cleaned) as T;
   } catch {
-    console.error("Failed to parse Gemini JSON response:", text.substring(0, 200));
+    console.error("Failed to parse Gemini JSON:", text.substring(0, 200));
     return null;
   }
 }
@@ -73,6 +62,5 @@ export async function askGeminiWithContext(
   systemContext: string,
   userQuery: string
 ): Promise<string> {
-  const prompt = systemContext + "\n\n---\n\nUser question: " + userQuery;
-  return askGemini(prompt);
+  return callGemini(systemContext + "\n\n---\n\nUser question: " + userQuery);
 }
