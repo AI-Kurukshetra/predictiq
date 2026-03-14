@@ -43,7 +43,7 @@ export function Sidebar({ role = "technician" }: { role?: Role }) {
   const badge = roleBadgeConfig[role];
 
   return (
-    <aside className="fixed left-0 top-0 h-screen w-64 bg-[#0B2340]">
+    <aside data-sidebar className="fixed left-0 top-0 h-screen w-64 bg-[#0B2340]">
       <div className="flex h-full flex-col">
         <div className="px-6 py-5">
           <div className="flex items-center gap-2.5">
@@ -92,6 +92,7 @@ export function Sidebar({ role = "technician" }: { role?: Role }) {
 
           <form action={logoutAction}>
             <button
+              data-logout
               type="submit"
               className="mt-1 flex w-full items-center gap-3 rounded-r-md border-l-[3px] border-l-transparent px-4 py-2.5 text-sm font-medium text-[#8C95A6] transition-colors hover:bg-[#132D4F]"
             >

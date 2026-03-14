@@ -36,7 +36,7 @@ function getFacilityName(facilities?: Equipment["facilities"]) {
 export function EquipmentCard({ equipment }: { equipment: Equipment }) {
   const facilityName = getFacilityName(equipment.facilities);
   return (
-    <Link href={`/equipment/${equipment.id}`}>
+    <Link href={`/equipment/${equipment.id}`} data-equipment-card>
       <div className="rounded-xl border border-[#E8ECF1] bg-white p-4 transition hover:shadow-lg cursor-pointer">
         {/* Top row */}
         <div className="flex items-center justify-between gap-2">

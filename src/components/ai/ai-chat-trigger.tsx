@@ -10,6 +10,7 @@ export function AiChatTrigger({ equipmentId }: { equipmentId?: string }) {
   return (
     <>
       <button
+        data-ai-chat-trigger
         type="button"
         onClick={() => setIsOpen(true)}
         className="fixed bottom-6 right-6 z-30 flex h-14 w-14 items-center justify-center rounded-full bg-[#3B82F6] shadow-xl transition hover:scale-110"

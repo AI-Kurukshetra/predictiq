@@ -98,7 +98,7 @@ export function AiChat({
               <p className="text-[10px] text-[#8C95A6]">Powered by AI</p>
             </div>
           </div>
-          <button type="button" onClick={onClose} className="rounded p-1 hover:bg-[#F5F6FA]">
+          <button data-ai-chat-close type="button" onClick={onClose} className="rounded p-1 hover:bg-[#F5F6FA]">
             <X className="h-4 w-4 text-[#5A6578]" />
           </button>
         </div>
@@ -154,6 +154,7 @@ export function AiChat({
         <div className="border-t border-[#E8ECF1] p-3">
           <div className="flex gap-2">
             <input
+              data-ai-chat-input
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
@@ -163,6 +164,7 @@ export function AiChat({
               className="flex-1 rounded-lg border border-[#E8ECF1] px-3 py-2.5 text-sm text-[#1A2332] outline-none focus:ring-2 focus:ring-[#3B82F6] disabled:opacity-50"
             />
             <button
+              data-ai-chat-send
               type="button"
               onClick={() => sendMessage(input)}
               disabled={isLoading || !input.trim()}

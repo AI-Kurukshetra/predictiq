@@ -124,7 +124,7 @@ export default async function DashboardPage({
           {techStats.map((item) => {
             const Icon = item.icon;
             return (
-              <Card key={item.label}>
+              <Card key={item.label} data-stat={item.label.toLowerCase().replace(/\s+/g, '-')}>
                 <CardContent className="flex items-center gap-4">
                   <div className="flex h-11 w-11 items-center justify-center rounded-full" style={{ backgroundColor: item.iconBg }}>
                     <Icon className="h-5 w-5" style={{ color: item.iconColor }} />
@@ -234,7 +234,7 @@ export default async function DashboardPage({
         {stats.map((item) => {
           const Icon = item.icon;
           return (
-            <Card key={item.label}>
+            <Card key={item.label} data-stat={item.label.toLowerCase().replace(/\s+/g, '-')}>
               <CardContent className="flex items-center gap-4">
                 <div className="flex h-11 w-11 items-center justify-center rounded-full" style={{ backgroundColor: item.iconBg }}>
                   <Icon className="h-5 w-5" style={{ color: item.iconColor }} />
@@ -250,7 +250,9 @@ export default async function DashboardPage({
       </section>
 
       {/* AI Dashboard Summary */}
-      <AiDashboardSummary />
+      <div data-ai-summary>
+        <AiDashboardSummary />
+      </div>
 
       {/* Equipment Health Distribution */}
       <Card>
