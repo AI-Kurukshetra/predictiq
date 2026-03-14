@@ -35,9 +35,8 @@ const daysColor = (days: number) => {
 };
 
 const confidenceColor = (confidence: number) => {
-  const pct = confidence > 1 ? confidence : confidence * 100;
-  if (pct > 80) return "bg-[#8B2252]";
-  if (pct >= 60) return "bg-[#E07A5F]";
+  if (confidence > 80) return "bg-[#8B2252]";
+  if (confidence >= 60) return "bg-[#E07A5F]";
   return "bg-[#3B82F6]";
 };
 
@@ -45,6 +44,7 @@ export default async function PredictionsPage() {
   const role = await getCurrentRole();
   if (role === "technician") redirect("/dashboard");
 
+  try {
   const [predictions, stats] = await Promise.all([
     getPredictions(),
     getPredictionStats(),
@@ -92,7 +92,7 @@ export default async function PredictionsPage() {
           <div>
             <p className="text-sm text-[#5A6578]">Avg Confidence</p>
             <p className="text-2xl font-bold text-[#1A2332]">
-              {Math.round(stats.averageConfidence > 1 ? stats.averageConfidence : stats.averageConfidence * 100)}%
+              {Math.round(stats.averageConfidence)}%
             </p>
           </div>
         </div>
@@ -124,7 +124,7 @@ export default async function PredictionsPage() {
             const equipmentType = Array.isArray(prediction.equipment)
               ? prediction.equipment[0]?.type
               : prediction.equipment?.type;
-            const confidencePct = Math.round(prediction.confidence > 1 ? prediction.confidence : prediction.confidence * 100);
+            const confidencePct = Math.round(prediction.confidence);
             const factors = Array.isArray(prediction.contributing_factors)
               ? (prediction.contributing_factors as string[])
               : [];
@@ -211,4 +211,14 @@ export default async function PredictionsPage() {
       )}
     </div>
   );
+
+  } catch (error) {
+    console.error('Predictions error:', error);
+    return (
+      <div className="rounded-xl border border-[#E8ECF1] bg-white p-8">
+        <h2 className="text-xl font-bold text-[#1A2332]">Unable to load predictions</h2>
+        <p className="mt-2 text-[#5A6578]">Please check your connection and try again.</p>
+      </div>
+    );
+  }
 }

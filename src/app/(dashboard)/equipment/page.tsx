@@ -13,6 +13,8 @@ export default async function EquipmentPage({
 }) {
   const params = await searchParams;
   const facilityId = params.facility;
+
+  try {
   const [equipment, stats, role] = await Promise.all([getEquipmentList(facilityId), getEquipmentStats(), getCurrentRole()]);
 
   return (
@@ -95,4 +97,14 @@ export default async function EquipmentPage({
       )}
     </div>
   );
+
+  } catch (error) {
+    console.error('Equipment error:', error);
+    return (
+      <div className="rounded-xl border border-[#E8ECF1] bg-white p-8">
+        <h2 className="text-xl font-bold text-[#1A2332]">Unable to load equipment</h2>
+        <p className="mt-2 text-[#5A6578]">Please check your connection and try again.</p>
+      </div>
+    );
+  }
 }

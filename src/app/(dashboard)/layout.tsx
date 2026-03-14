@@ -5,12 +5,20 @@ import Sidebar from "@/components/layout/sidebar";
 import TopBar from "@/components/layout/top-bar";
 import { AiChatTrigger } from "@/components/ai/ai-chat-trigger";
 
+export const dynamic = "force-dynamic";
+
 type DashboardLayoutProps = {
   children: ReactNode;
 };
 
 export default async function DashboardLayout({ children }: DashboardLayoutProps) {
-  const currentUser = await getCurrentUser();
+  let currentUser;
+  try {
+    currentUser = await getCurrentUser();
+  } catch (error) {
+    console.error("Layout auth error:", error);
+    redirect("/login");
+  }
 
   if (!currentUser) {
     redirect("/login");

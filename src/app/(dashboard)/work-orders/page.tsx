@@ -53,6 +53,7 @@ export default async function WorkOrdersPage({
   const params = await searchParams;
   const statusFilter = params.status ?? "";
 
+  try {
   const [workOrders, stats, role] = await Promise.all([
     getWorkOrders(statusFilter ? { status: statusFilter } : undefined),
     getWorkOrderStats(),
@@ -253,4 +254,14 @@ export default async function WorkOrdersPage({
       )}
     </div>
   );
+
+  } catch (error) {
+    console.error('Work orders error:', error);
+    return (
+      <div className="rounded-xl border border-[#E8ECF1] bg-white p-8">
+        <h2 className="text-xl font-bold text-[#1A2332]">Unable to load work orders</h2>
+        <p className="mt-2 text-[#5A6578]">Please check your connection and try again.</p>
+      </div>
+    );
+  }
 }

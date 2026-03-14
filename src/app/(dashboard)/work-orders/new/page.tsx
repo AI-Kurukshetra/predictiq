@@ -8,6 +8,8 @@ export default async function NewWorkOrderPage({
   searchParams: Promise<{ equipment?: string }>;
 }) {
   const params = await searchParams;
+
+  try {
   const [equipmentList, technicians] = await Promise.all([
     getEquipmentList(),
     getTechnicians(),
@@ -35,4 +37,14 @@ export default async function NewWorkOrderPage({
       />
     </div>
   );
+
+  } catch (error) {
+    console.error('New work order error:', error);
+    return (
+      <div className="rounded-xl border border-[#E8ECF1] bg-white p-8">
+        <h2 className="text-xl font-bold text-[#1A2332]">Unable to load page</h2>
+        <p className="mt-2 text-[#5A6578]">Please check your connection and try again.</p>
+      </div>
+    );
+  }
 }

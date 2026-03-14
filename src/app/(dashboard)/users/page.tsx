@@ -19,6 +19,7 @@ export default async function UsersPage() {
   const role = await getCurrentRole();
   if (role !== "admin") redirect("/dashboard");
 
+  try {
   const [users, stats, currentUser] = await Promise.all([
     getAllUsers(),
     getUserStats(),
@@ -134,4 +135,14 @@ export default async function UsersPage() {
       </div>
     </div>
   );
+
+  } catch (error) {
+    console.error('Users error:', error);
+    return (
+      <div className="rounded-xl border border-[#E8ECF1] bg-white p-8">
+        <h2 className="text-xl font-bold text-[#1A2332]">Unable to load users</h2>
+        <p className="mt-2 text-[#5A6578]">Please check your connection and try again.</p>
+      </div>
+    );
+  }
 }

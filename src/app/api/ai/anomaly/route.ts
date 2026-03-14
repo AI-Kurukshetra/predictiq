@@ -32,7 +32,7 @@ Total anomalies: ${anomalies.length} out of ${(readings ?? []).length} readings`
 
     const result = await askGeminiJSON(ANOMALY_EXPLAINER_PROMPT + "\n\n" + context);
     return NextResponse.json(result ?? { summary: "Unable to analyze", deviation: "N/A", possibleCauses: [], riskLevel: "Unknown", immediateAction: "Consult maintenance team" });
-  } catch {
+  } catch (error: unknown) { const err = error as { message?: string }; console.error("AI route error:", err.message ?? error);
     return NextResponse.json({ error: "Failed to analyze anomaly" }, { status: 500 });
   }
 }

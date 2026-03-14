@@ -64,7 +64,9 @@ export async function POST(request: NextRequest) {
 
     const response = await askGeminiWithContext(EQUIPMENT_ANALYST_PROMPT + "\n\n" + context, message);
     return NextResponse.json({ response, timestamp: new Date().toISOString() });
-  } catch {
-    return NextResponse.json({ error: "Failed to get AI response" }, { status: 500 });
+  } catch (error: unknown) {
+    const err = error as { message?: string };
+    console.error("AI chat route error:", err.message ?? error);
+    return NextResponse.json({ error: err.message ?? "Failed to get AI response" }, { status: 500 });
   }
 }

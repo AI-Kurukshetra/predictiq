@@ -36,7 +36,7 @@ export function buildEquipmentContext(
   if (predictions.length > 0) {
     lines.push("Active Predictions:");
     for (const p of predictions) {
-      lines.push(`- ${p.failure_type}: confidence ${Math.round(Number(p.confidence) * 100)}%, ${p.days_until_failure} days, severity ${p.severity}`);
+      lines.push(`- ${p.failure_type}: confidence ${Math.round(Number(p.confidence))}%, ${p.days_until_failure} days, severity ${p.severity}`);
       if (Array.isArray(p.contributing_factors)) {
         lines.push(`  Contributing factors: ${(p.contributing_factors as string[]).join(", ")}`);
       }
@@ -81,7 +81,7 @@ export function buildDashboardContext(
       const eqName = typeof p.equipment === "object" && p.equipment !== null
         ? (Array.isArray(p.equipment) ? (p.equipment[0] as { name?: string })?.name : (p.equipment as { name?: string })?.name) ?? "Unknown"
         : "Unknown";
-      lines.push(`- ${eqName}: ${p.failure_type}, ${p.days_until_failure} days, confidence ${Math.round(Number(p.confidence) * 100)}%`);
+      lines.push(`- ${eqName}: ${p.failure_type}, ${p.days_until_failure} days, confidence ${Math.round(Number(p.confidence))}%`);
     }
   }
 

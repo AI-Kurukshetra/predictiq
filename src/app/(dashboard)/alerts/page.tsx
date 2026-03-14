@@ -59,6 +59,7 @@ export default async function AlertsPage({
   const statusFilter = params.status ?? "";
   const facilityId = params.facility;
 
+  try {
   const filters: { status?: string; facilityId?: string } = {};
   if (statusFilter) filters.status = statusFilter;
   if (facilityId) filters.facilityId = facilityId;
@@ -228,4 +229,14 @@ export default async function AlertsPage({
       )}
     </div>
   );
+
+  } catch (error) {
+    console.error('Alerts error:', error);
+    return (
+      <div className="rounded-xl border border-[#E8ECF1] bg-white p-8">
+        <h2 className="text-xl font-bold text-[#1A2332]">Unable to load alerts</h2>
+        <p className="mt-2 text-[#5A6578]">Please check your connection and try again.</p>
+      </div>
+    );
+  }
 }

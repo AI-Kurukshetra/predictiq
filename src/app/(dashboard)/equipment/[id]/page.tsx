@@ -82,6 +82,8 @@ export default async function EquipmentDetailPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
+
+  try {
   const [{ equipment, sensors, latestReadings, activePredictions, recentAlerts }, role] =
     await Promise.all([getEquipmentById(id), getCurrentRole()]);
 
@@ -317,7 +319,7 @@ export default async function EquipmentDetailPage({
                       <div className="text-center">
                         <p className="text-xs text-[#5A6578]">Confidence</p>
                         <p className="font-semibold text-[#1A2332]">
-                          {Math.round(prediction.confidence > 1 ? prediction.confidence : prediction.confidence * 100)}%
+                          {Math.round(prediction.confidence)}%
                         </p>
                       </div>
                       <div className="text-center">
@@ -432,4 +434,14 @@ export default async function EquipmentDetailPage({
       </section>
     </div>
   );
+
+  } catch (error) {
+    console.error('Equipment detail error:', error);
+    return (
+      <div className="rounded-xl border border-[#E8ECF1] bg-white p-8">
+        <h2 className="text-xl font-bold text-[#1A2332]">Unable to load equipment details</h2>
+        <p className="mt-2 text-[#5A6578]">Please check your connection and try again.</p>
+      </div>
+    );
+  }
 }

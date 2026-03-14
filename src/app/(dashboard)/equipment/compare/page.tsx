@@ -17,6 +17,7 @@ export default async function EquipmentComparePage({
   const params = await searchParams;
   const selectedIds = params.ids ? params.ids.split(",").filter(Boolean) : [];
 
+  try {
   const equipmentList = await getEquipmentList();
   const equipment = equipmentList.map((eq) => ({
     id: eq.id,
@@ -53,4 +54,14 @@ export default async function EquipmentComparePage({
       )}
     </div>
   );
+
+  } catch (error) {
+    console.error('Equipment comparison error:', error);
+    return (
+      <div className="rounded-xl border border-[#E8ECF1] bg-white p-8">
+        <h2 className="text-xl font-bold text-[#1A2332]">Unable to load equipment comparison</h2>
+        <p className="mt-2 text-[#5A6578]">Please check your connection and try again.</p>
+      </div>
+    );
+  }
 }

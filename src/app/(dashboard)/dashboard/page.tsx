@@ -78,6 +78,8 @@ export default async function DashboardPage({
 }) {
   const params = await searchParams;
   const facilityId = params.facility;
+
+  try {
   const role = await getCurrentRole();
   const currentUser = await getCurrentUser();
 
@@ -376,6 +378,16 @@ export default async function DashboardPage({
       {role === "admin" && <AdminSection />}
     </div>
   );
+
+  } catch (error) {
+    console.error('Dashboard error:', error);
+    return (
+      <div className="rounded-xl border border-[#E8ECF1] bg-white p-8">
+        <h2 className="text-xl font-bold text-[#1A2332]">Unable to load dashboard</h2>
+        <p className="mt-2 text-[#5A6578]">Please check your connection and try again.</p>
+      </div>
+    );
+  }
 }
 
 async function AdminSection() {

@@ -12,6 +12,8 @@ export default async function EditEquipmentPage({
   if (role !== "admin") redirect("/equipment");
 
   const { id } = await params;
+
+  try {
   const supabase = await createClient();
 
   const [{ data: equipment }, { data: facilities }] = await Promise.all([
@@ -30,4 +32,14 @@ export default async function EditEquipmentPage({
       <EquipmentForm facilities={facilities ?? []} equipment={equipment} />
     </div>
   );
+
+  } catch (error) {
+    console.error('Edit equipment error:', error);
+    return (
+      <div className="rounded-xl border border-[#E8ECF1] bg-white p-8">
+        <h2 className="text-xl font-bold text-[#1A2332]">Unable to load equipment editor</h2>
+        <p className="mt-2 text-[#5A6578]">Please check your connection and try again.</p>
+      </div>
+    );
+  }
 }

@@ -47,6 +47,8 @@ function SensorRow({
   const [minVal, setMinVal] = useState(sensor.min_threshold ?? 0);
   const [maxVal, setMaxVal] = useState(sensor.max_threshold ?? 100);
   const [isPending, startTransition] = useTransition();
+  const [saveStatus, setSaveStatus] = useState<"idle" | "saved" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const Icon = sensorIcons[sensor.type] ?? Activity;
 
   return (
@@ -106,16 +108,34 @@ function SensorRow({
             type="button"
             disabled={isPending}
             onClick={() => {
+              setSaveStatus("idle");
+              setErrorMsg(null);
               startTransition(async () => {
-                await updateSensorThresholds(sensor.id, minVal, maxVal);
+                const result = await updateSensorThresholds(sensor.id, minVal, maxVal);
+                if (result.error) {
+                  setSaveStatus("error");
+                  setErrorMsg(result.error);
+                } else {
+                  setSaveStatus("saved");
+                  setTimeout(() => setSaveStatus("idle"), 2000);
+                }
               });
             }}
-            className="rounded-lg bg-[#DBEAFE] px-3 py-1.5 text-xs font-medium text-[#1E40AF] transition hover:bg-[#DBEAFE] disabled:opacity-50"
+            className={`rounded-lg px-3 py-1.5 text-xs font-medium transition disabled:opacity-50 ${
+              saveStatus === "saved"
+                ? "bg-[#E6F5F0] text-[#0A5E52]"
+                : saveStatus === "error"
+                  ? "bg-[#F0E4E8] text-[#6B1D3A]"
+                  : "bg-[#DBEAFE] text-[#1E40AF] hover:bg-[#c5d8f8]"
+            }`}
           >
-            {isPending ? "..." : "Save"}
+            {isPending ? "..." : saveStatus === "saved" ? "\u2713 Saved" : saveStatus === "error" ? "Failed" : "Save"}
           </button>
         )}
       </div>
+      {errorMsg && (
+        <p className="px-4 pb-2 text-xs text-[#6B1D3A]">{errorMsg}</p>
+      )}
     </div>
   );
 }

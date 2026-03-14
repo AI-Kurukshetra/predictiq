@@ -18,6 +18,7 @@ export default async function AnalyticsPage() {
   const role = await getCurrentRole();
   if (role === "technician") redirect("/dashboard");
 
+  try {
   const supabase = await createClient();
 
   // Fetch all data in parallel
@@ -153,7 +154,13 @@ export default async function AnalyticsPage() {
 
   return (
     <div className="space-y-8">
-      <header className="flex items-start justify-between">
+      {/* Print-only header */}
+      <div className="print-only mb-6 border-b border-[#E8ECF1] pb-4">
+        <h1 className="text-2xl font-bold text-[#1A2332]">PredictIQ Analytics Report</h1>
+        <p className="text-sm text-[#5A6578]">Generated on {format(new Date(), "MMMM dd, yyyy")}</p>
+      </div>
+
+      <header className="flex items-start justify-between no-print">
         <div>
           <h1 className="text-2xl font-bold text-[#1A2332]">Analytics & Reports</h1>
           <p className="mt-1 text-sm text-[#5A6578]">
@@ -280,4 +287,14 @@ export default async function AnalyticsPage() {
       </div>
     </div>
   );
+
+  } catch (error) {
+    console.error('Analytics error:', error);
+    return (
+      <div className="rounded-xl border border-[#E8ECF1] bg-white p-8">
+        <h2 className="text-xl font-bold text-[#1A2332]">Unable to load analytics</h2>
+        <p className="mt-2 text-[#5A6578]">Please check your connection and try again.</p>
+      </div>
+    );
+  }
 }

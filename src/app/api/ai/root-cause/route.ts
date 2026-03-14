@@ -34,7 +34,7 @@ export async function POST(request: NextRequest) {
 
     const context = `Equipment: ${eqName}
 Prediction: ${prediction.failure_type}
-Confidence: ${Math.round(prediction.confidence > 1 ? prediction.confidence : prediction.confidence * 100)}%
+Confidence: ${Math.round(prediction.confidence)}%
 Severity: ${prediction.severity}
 Days until failure: ${prediction.days_until_failure}
 Contributing factors: ${Array.isArray(prediction.contributing_factors) ? (prediction.contributing_factors as string[]).join(", ") : "N/A"}
@@ -45,7 +45,7 @@ ${sensorSummaries.join("\n")}`;
 
     const result = await askGeminiJSON(ROOT_CAUSE_PROMPT + "\n\n" + context);
     return NextResponse.json(result ?? { primaryCause: "Unable to determine", secondaryCauses: [], evidence: [], timeline: "Insufficient data", preventionSteps: [], estimatedUrgency: "Unknown" });
-  } catch {
+  } catch (error: unknown) { const err = error as { message?: string }; console.error("AI route error:", err.message ?? error);
     return NextResponse.json({ error: "Failed to analyze root cause" }, { status: 500 });
   }
 }

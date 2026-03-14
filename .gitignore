@@ -46,9 +46,9 @@ next-env.d.ts
 *.err.log
 *.out.log
 
-# claude
-.claude/
-
-# IDE
+# IDE & tools
 .vscode/
 .idea/
+.claude/
+
+.vercel
