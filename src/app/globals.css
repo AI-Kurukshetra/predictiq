@@ -24,3 +24,23 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@media print {
+  aside,
+  .no-print {
+    display: none !important;
+  }
+  header.top-bar {
+    display: none !important;
+  }
+  main {
+    margin: 0 !important;
+    padding: 20px !important;
+  }
+  body {
+    background: white !important;
+  }
+  .ml-64 {
+    margin-left: 0 !important;
+  }
+}

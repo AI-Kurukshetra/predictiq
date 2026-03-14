@@ -1,0 +1,15 @@
+import { Skeleton } from "@/components/ui/skeleton";
+
+export default function Loading() {
+  return (
+    <div className="space-y-6">
+      <Skeleton className="h-8 w-48" />
+      <div className="flex gap-2">
+        {Array.from({ length: 5 }).map((_, i) => (
+          <Skeleton key={i} className="h-8 w-28 rounded-full" />
+        ))}
+      </div>
+      <Skeleton className="h-[400px] rounded-xl" />
+    </div>
+  );
+}
